@@ -1,0 +1,7 @@
+{
+  "username": "spolenov",
+  "filename": "test_file_name",
+  "startDate": "1564617600000",
+  "endDate": "1567296000000",
+  "groupings": ["clientName", "invoiceNumber"]
+}

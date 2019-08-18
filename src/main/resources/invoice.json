@@ -1,0 +1,85 @@
+[{
+  "dateDoc": "1564617610000",
+  "summa": 2555.777,
+  "invoiceNumber": null,
+  "client": {
+    "id": 1,
+    "name": "testClient1"
+  },
+  "rows": [
+    {"rowNum": 1,
+      "goodsId": 1881,
+      "goodsName": "Сепульки жареные 1 кг",
+      "qty": 1.6665,
+      "incomePrice": 704.23523,
+      "expenditurePrice": 796.115136,
+      "extraCharge": -11.0005,
+      "rowSum": 0,
+      "vat": 18},
+    {"rowNum": 2,
+      "goodsId": 1882,
+      "goodsName": "Тессеракт куриный 2 кг",
+      "qty": 2.6665,
+      "incomePrice": 204.23523,
+      "expenditurePrice": 396.115136,
+      "extraCharge": -12.0015,
+      "rowSum": 0,
+      "vat": 20}
+  ]
+}, {
+  "dateDoc": "1564617620000",
+  "summa": 1555.888,
+  "invoiceNumber": null,
+  "client": {
+    "id": 1,
+    "name": "testClient1"
+  },
+  "rows": [
+    {"rowNum": 1,
+      "goodsId": 1881,
+      "goodsName": "Сепульки варёные 1 кг",
+      "qty": 1.6665,
+      "incomePrice": 555,
+      "expenditurePrice": 666,
+      "extraCharge": -11.0005,
+      "rowSum": 0,
+      "vat": 18},
+    {"rowNum": 2,
+      "goodsId": 1882,
+      "goodsName": "Тессеракт говяжий 2 кг",
+      "qty": 2.6665,
+      "incomePrice": 555,
+      "expenditurePrice": 666,
+      "extraCharge": -16.0015,
+      "rowSum": 0,
+      "vat": 10}
+  ]
+}, {
+  "dateDoc": "1564617630000",
+  "summa": 3555.899,
+  "invoiceNumber": "test000002",
+  "client": {
+    "id": 2,
+    "name": "testClient2"
+  },
+  "rows": [
+    {"rowNum": 1,
+      "goodsId": 1881,
+      "goodsName": "Сепульки жареные 1 кг",
+      "qty": 1.6665,
+      "incomePrice": 555,
+      "expenditurePrice": 666,
+      "extraCharge": -11.0005,
+      "rowSum": 0,
+      "vat": 18},
+    {"rowNum": 2,
+      "goodsId": 1882,
+      "goodsName": "Тессеракт куриный 2 кг",
+      "qty": 2.6665,
+      "incomePrice": 555,
+      "expenditurePrice": 666,
+      "extraCharge": -16.0015,
+      "rowSum": 0,
+      "vat": 10}
+  ]
+}]

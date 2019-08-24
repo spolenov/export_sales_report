@@ -1,9 +1,10 @@
 package com.century.report.generator;
 
 import com.century.exception.ExportSalesReportException;
-import com.century.report.extra_charge.Invoice;
 import com.century.report.ReportSettings;
 import com.century.report.ReportType;
+import com.century.report.extra_charge.Grouping;
+import com.century.report.extra_charge.Invoice;
 import com.century.report.extra_charge.ReportRow;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.JRException;
@@ -22,11 +23,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static com.century.report.Util.logToFile;
+import static com.century.report.Util.*;
 import static com.century.report.extra_charge.Grouping.CLIENT_NAME;
 import static com.century.report.extra_charge.Grouping.INVOICE_NUMBER;
-import static java.io.File.createTempFile;
-import static java.util.stream.Collectors.toList;
 import static net.sf.jasperreports.engine.JasperFillManager.fillReport;
 import static net.sf.jasperreports.engine.util.JRLoader.loadObject;
 
@@ -40,8 +39,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
     public File doReport(){
         try {
             JasperEntity entity = getEntity();
-            File ret = new File(String.format("%s\\%s.xls",
-                    "\\\\alphamess0\\exchange\\spolenov\\export_sales", settings.getFilename()));
+            File ret = new File(getExcelFileFullPath(settings.getFilename()));
 
             JasperPrint jasperPrint;
             jasperPrint = fillCompiledReport(
@@ -86,6 +84,18 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
         Map<String, Object> params = new HashMap<>();
         params.put("startDate", new SimpleDateFormat(DATE_PATTERN).format(settings.getStartDate()));
         params.put("endDate", new SimpleDateFormat(DATE_PATTERN).format(settings.getEndDate()));
+        params.put("programName", settings.getProgramName());
+
+        Iterator<String> groupIterator = settings.getGroupings().iterator();
+
+        for(int i = 1; i<= getMaxGroupingCount(); i++){
+            if(groupIterator.hasNext()){
+                params.put("grouping" + i, groupIterator.next());
+            } else{
+                params.put("grouping" + i, "null");
+            }
+        }
+        log.info("Report params are {}", params);
 
         List<Map<String, ?>> fields = prepareFields();
         return new JasperEntity(params, fields, "template/extra_charge.jasper");
@@ -104,7 +114,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
             } else if(grouping.equals(INVOICE_NUMBER.getName())){
                 temp = temp.sorted(Comparator.comparing(ReportRow::getInvoiceNumber,
                         Comparator.nullsFirst(Comparator.naturalOrder())));
-            } else{
+            } else if(!grouping.equals(Grouping.NULL.getName())){
                 throw new ExportSalesReportException("Unsupported grouping: " + grouping);
             }
         }
@@ -137,7 +147,6 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
 
             field.put("dateDoc", inv.getDateDoc());
             field.put("clientName", inv.getClientName());
-            field.put("programName", settings.getProgramName());
             field.put("invoiceNumber", inv.getInvoiceNumber());
             field.put("rowNum", inv.getRowNum());
             field.put("goodsName", inv.getGoodsName());

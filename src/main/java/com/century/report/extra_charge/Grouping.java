@@ -5,8 +5,10 @@ import lombok.Getter;
 @Getter
 public enum Grouping {
     CLIENT_NAME("clientName"),
+    DATE_DOC("dateDoc"),
     INVOICE_NUMBER("invoiceNumber"),
-    GOODS_GROUP2("goodsGroup2");
+    GOODS_GROUP2("goodsGroup2"),
+    NULL("null");
 
     String name;
 

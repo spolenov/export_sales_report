@@ -77,6 +77,7 @@ public class ReportServiceImpl {
         ReportSettings settings;
         try{
             settings = parseSettings();
+            validateSettings();
         } catch (Exception e){
             logToFile("Failed to parse settings json file", e);
             //throw new ExportSalesReportException(e);
@@ -90,6 +91,16 @@ public class ReportServiceImpl {
             }
         }
         return settings;
+    }
+
+    private static void validateSettings(){
+        int groupingsCount = getSettings().getGroupings().size();
+
+        if(groupingsCount > getMaxGroupingCount()){
+            throw new ExportSalesReportException(
+                    String.format("Max groupings count is %d, given count is %d.",
+                            getMaxGroupingCount(), groupingsCount));
+        }
     }
 
     private File doReportExtraCharge(ReportType type, ReportSettings settings, List<Invoice> invoices){

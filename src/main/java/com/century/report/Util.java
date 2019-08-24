@@ -1,6 +1,7 @@
 package com.century.report;
 
 import com.century.exception.ExportSalesReportException;
+import com.century.report.extra_charge.Grouping;
 import com.century.report.extra_charge.Invoice;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,13 +17,20 @@ import java.util.stream.Collectors;
 @Slf4j
 public class Util {
     private static final int REPORT_EMPTY = 4096;
-    private static final String LOG_PATH = "\\\\alphamess0\\exchange\\spolenov\\export_sales";
+    private static final String LOG_PATH = "G:\\Java\\export_sales_report";
+    private static final String EXCEL_FILE_PATH = "G:\\Java\\export_sales_report";
+
     private static final String LOG_FILE_NAME = "export_sales_report_%.log";
+    private static final int MAX_GROUPING_COUNT = 3;
 
     public static String getDir(){
         File f = new File(System.getProperty("java.class.path"));
         File dir = f.getAbsoluteFile().getParentFile();
         return dir.toString();
+    }
+
+    public static int getMaxGroupingCount(){
+        return MAX_GROUPING_COUNT;
     }
 
     public static ReportSettings parseSettings() throws IOException {
@@ -125,5 +133,10 @@ public class Util {
 
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(jsonTxt, ref);
+    }
+
+    public static String getExcelFileFullPath(String fileName){
+        return String.format("%s\\%s.xls",
+                EXCEL_FILE_PATH, fileName);
     }
 }

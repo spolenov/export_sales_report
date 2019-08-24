@@ -1,7 +1,9 @@
 {
+  "detailedByDataElements": "true",
   "username": "spolenov",
   "filename": "test_file_name",
+  "programName": "Экспорт_Продажи",
   "startDate": "1564617600000",
   "endDate": "1567296000000",
-  "groupings": ["clientName", "invoiceNumber", "null"]
+  "groupings": ["clientName", "goodsGroup2"]
 }

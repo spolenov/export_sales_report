@@ -4,7 +4,6 @@ import com.century.exception.ExportSalesReportException;
 import com.century.report.extra_charge.Invoice;
 import com.century.report.generator.ExtraChargeReportGenerator;
 import com.century.report.generator.ReportGenerator;
-import com.fasterxml.jackson.core.type.TypeReference;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
@@ -15,8 +14,10 @@ import static com.century.report.Util.*;
 
 @Slf4j
 public class ReportServiceImpl {
+    private static ReportSettings settings;
+
     public void doReport(ReportName reportName, ReportType type) {
-        ReportSettings settings = getSettings();
+        settings = getSettings();
         String username = settings.getUsername();
 
         Util.logToFile(username,
@@ -36,16 +37,10 @@ public class ReportServiceImpl {
 
     private List<Invoice> getInvoices(ReportSettings settings){
         try{
-            return Util.getInvoices();
+            return parseInvoices();
         } catch (Exception e){
             logToFile(settings.getUsername(), "Failed to get invoices from json file", e);
-            //throw new ExportSalesReportException(e);
-
-            try{
-                return getResourceObject("invoice.json", new TypeReference<List<Invoice>>(){});
-            } catch (Exception e1){
-                throw new ExportSalesReportException(e1);
-            }
+            throw new ExportSalesReportException(e);
         }
     }
 
@@ -74,27 +69,18 @@ public class ReportServiceImpl {
     }
 
     private static ReportSettings getSettings() {
-        ReportSettings settings;
         try{
             settings = parseSettings();
             validateSettings();
         } catch (Exception e){
             logToFile("Failed to parse settings json file", e);
-            //throw new ExportSalesReportException(e);
-
-            try{
-                settings = getResourceObject(
-                        "settings.json",
-                        new TypeReference<ReportSettings>(){});
-            } catch (Exception e1){
-                throw new ExportSalesReportException(e1);
-            }
+            throw new ExportSalesReportException(e);
         }
         return settings;
     }
 
     private static void validateSettings(){
-        int groupingsCount = getSettings().getGroupings().size();
+        int groupingsCount = settings.getGroupings().size();
 
         if(groupingsCount > getMaxGroupingCount()){
             throw new ExportSalesReportException(

@@ -14,11 +14,17 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 @Slf4j
 public class Util {
     private static final int REPORT_EMPTY = 4096;
-    private static final String LOG_PATH = "G:\\Java\\export_sales_report";
-    private static final String EXCEL_FILE_PATH = "G:\\Java\\export_sales_report";
+    private static final String LOG_PATH = "C:\\Temp\\export_sales_report";
+    private static final String EXCEL_FILE_PATH = "C:\\Temp\\export_sales_report";
+
+    private static final String CONFIG_PATH = "C:\\Temp\\export_sales_report";
+    private static final String SETTINGS_FILE_NAME = "settings.json";
+    private static final String INVOICE_FILE_NAME = "invoice.json";
 
     private static final String LOG_FILE_NAME = "export_sales_report_%.log";
     private static final int MAX_GROUPING_COUNT = 3;
@@ -35,16 +41,21 @@ public class Util {
 
     public static ReportSettings parseSettings() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(
-                new FileReader(getDir() + "\\settings.json"),
-                ReportSettings.class);
+
+        Reader initialReader = new InputStreamReader(
+                new FileInputStream(CONFIG_PATH + "\\" + SETTINGS_FILE_NAME), UTF_8);
+
+        String json = IOUtils.toString(initialReader);
+        return objectMapper.readValue(json, ReportSettings.class);
     }
 
-    public static List<Invoice> getInvoices() throws IOException {
+    public static List<Invoice> parseInvoices() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(
-                new FileReader(getDir() + "\\invoice.json"),
-                new TypeReference<List<Invoice>>(){});
+        Reader initialReader = new InputStreamReader(
+                new FileInputStream(CONFIG_PATH + "\\" + INVOICE_FILE_NAME), UTF_8);
+
+        String json = IOUtils.toString(initialReader);
+        return objectMapper.readValue(json, new TypeReference<List<Invoice>>(){});
     }
 
     public static void checkFileIsEmpty(File file) throws ExportSalesReportException {
@@ -123,16 +134,6 @@ public class Util {
         return new SimpleDateFormat("dd.MM.yyyy HH.mm.ss")
                 .format(new Date(System.currentTimeMillis())) + ": [" +
                 username + "]: " + message ;
-    }
-
-    public static <T> T getResourceObject(String resourcePath, TypeReference<T> ref) throws IOException {
-        ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        InputStream is = classloader.getResourceAsStream(resourcePath);
-
-        String jsonTxt = IOUtils.toString(is, "UTF-8");
-
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(jsonTxt, ref);
     }
 
     public static String getExcelFileFullPath(String fileName){

@@ -9,6 +9,7 @@ public class InvoiceRow {
     int rowNum;
     Integer goodsId;
     String goodsName;
+    String goodsGroup2;
 
     BigDecimal qty;
     BigDecimal incomePrice;

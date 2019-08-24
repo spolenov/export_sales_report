@@ -1,7 +1,7 @@
 [{
   "dateDoc": "1564617610000",
   "summa": 2555.777,
-  "invoiceNumber": null,
+  "invoiceNumber": "НАКЛ000501",
   "client": {
     "id": 1,
     "name": "testClient1"
@@ -14,7 +14,8 @@
       "incomePrice": 704.23523,
       "expenditurePrice": 796.115136,
       "extraCharge": -11.0005,
-      "rowSum": 0,
+      "rowSum": 1326.725874144,
+      "goodsGroup2": "GROUP_1",
       "vat": 18},
     {"rowNum": 2,
       "goodsId": 1882,
@@ -23,13 +24,14 @@
       "incomePrice": 204.23523,
       "expenditurePrice": 396.115136,
       "extraCharge": -12.0015,
-      "rowSum": 0,
+      "rowSum": 1056.241010144,
+      "goodsGroup2": "GROUP_1",
       "vat": 20}
   ]
 }, {
   "dateDoc": "1564617620000",
   "summa": 1555.888,
-  "invoiceNumber": null,
+  "invoiceNumber": "НАКЛ000502",
   "client": {
     "id": 1,
     "name": "testClient1"
@@ -42,7 +44,8 @@
       "incomePrice": 555,
       "expenditurePrice": 666,
       "extraCharge": -11.0005,
-      "rowSum": 0,
+      "rowSum": 1109.889,
+      "goodsGroup2": "GROUP_2",
       "vat": 18},
     {"rowNum": 2,
       "goodsId": 1882,
@@ -51,13 +54,14 @@
       "incomePrice": 555,
       "expenditurePrice": 666,
       "extraCharge": -16.0015,
-      "rowSum": 0,
+      "rowSum": 1775.889,
+      "goodsGroup2": "GROUP_2",
       "vat": 10}
   ]
 }, {
   "dateDoc": "1564617630000",
   "summa": 3555.899,
-  "invoiceNumber": "test000002",
+  "invoiceNumber": "НАКЛ000503",
   "client": {
     "id": 2,
     "name": "testClient2"
@@ -65,21 +69,23 @@
   "rows": [
     {"rowNum": 1,
       "goodsId": 1881,
-      "goodsName": "Сепульки жареные 1 кг",
+      "goodsName": "(testClient2) Сепульки жареные 1 кг",
       "qty": 1.6665,
       "incomePrice": 555,
       "expenditurePrice": 666,
       "extraCharge": -11.0005,
-      "rowSum": 0,
+      "rowSum": 1109.889,
+      "goodsGroup2": "GROUP_2",
       "vat": 18},
     {"rowNum": 2,
       "goodsId": 1882,
-      "goodsName": "Тессеракт куриный 2 кг",
+      "goodsName": "(testClient2) Тессеракт куриный 2 кг",
       "qty": 2.6665,
       "incomePrice": 555,
       "expenditurePrice": 666,
       "extraCharge": -16.0015,
-      "rowSum": 0,
+      "rowSum": 1775.889,
+      "goodsGroup2": "GROUP_2",
       "vat": 10}
   ]
 }]

@@ -6,6 +6,7 @@ import com.century.report.ReportType;
 import com.century.report.extra_charge.Grouping;
 import com.century.report.extra_charge.Invoice;
 import com.century.report.extra_charge.ReportRow;
+import com.century.report.util.BigDecimalAverageCollector;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -18,14 +19,15 @@ import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.century.report.Util.*;
-import static com.century.report.extra_charge.Grouping.CLIENT_NAME;
-import static com.century.report.extra_charge.Grouping.INVOICE_NUMBER;
+import static com.century.report.extra_charge.Grouping.*;
+import static java.util.stream.Collectors.groupingBy;
 import static net.sf.jasperreports.engine.JasperFillManager.fillReport;
 import static net.sf.jasperreports.engine.util.JRLoader.loadObject;
 
@@ -37,9 +39,11 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
 
     @Override
     public File doReport(){
+        File ret = null;
+
         try {
             JasperEntity entity = getEntity();
-            File ret = new File(getExcelFileFullPath(settings.getFilename()));
+            ret = new File(getExcelFileFullPath(settings.getFilename()));
 
             JasperPrint jasperPrint;
             jasperPrint = fillCompiledReport(
@@ -54,9 +58,9 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
 
             return ret;
         } catch (Exception e) {
-            String msg = String.format("Failed to generate %s report by parameters: %s",
-                    reportType, settings);
-            logToFile(msg, e);
+            String msg = String.format("Failed to generate %s report file (%s) by parameters: %s",
+                    reportType, ret == null? "null": ret.getAbsolutePath(), settings);
+            logToFile(settings.getUsername(), msg, e);
             throw new ExportSalesReportException(msg, e);
         }
     }
@@ -85,6 +89,8 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
         params.put("startDate", new SimpleDateFormat(DATE_PATTERN).format(settings.getStartDate()));
         params.put("endDate", new SimpleDateFormat(DATE_PATTERN).format(settings.getEndDate()));
         params.put("programName", settings.getProgramName());
+        params.put("dateCalc",new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date()));
+        params.put("isShortReport", !settings.isDetailedByDataElements());
 
         Iterator<String> groupIterator = settings.getGroupings().iterator();
 
@@ -101,7 +107,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
         return new JasperEntity(params, fields, "template/extra_charge.jasper");
     }
 
-    private Stream getSortedStream(Stream<ReportRow> input){
+    private Stream<ReportRow> getSortedStream(Stream<ReportRow> input){
         Stream<ReportRow> temp = input;
 
         Iterator<String> iter = settings.getGroupings().iterator();
@@ -114,6 +120,12 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
             } else if(grouping.equals(INVOICE_NUMBER.getName())){
                 temp = temp.sorted(Comparator.comparing(ReportRow::getInvoiceNumber,
                         Comparator.nullsFirst(Comparator.naturalOrder())));
+            } else if(grouping.equals(GOODS_GROUP2.getName())){
+                temp = temp.sorted(Comparator.comparing(ReportRow::getGoodsGroup2,
+                        Comparator.nullsFirst(Comparator.naturalOrder())));
+            } else if(grouping.equals(DATE_DOC.getName())){
+                temp = temp.sorted(Comparator.comparing(ReportRow::getDateDoc,
+                        Comparator.nullsFirst(Comparator.naturalOrder())));
             } else if(!grouping.equals(Grouping.NULL.getName())){
                 throw new ExportSalesReportException("Unsupported grouping: " + grouping);
             }
@@ -125,20 +137,22 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
         return settings.isDetailedByDataElements();
     }
 
+    private List<ReportRow> getReportRows(){
+        return data.stream().flatMap(
+                d -> getSortedStream(d.getReportRows()
+                        .stream()
+                        .peek(this::calcFields)))
+                .collect(Collectors.toList());
+    }
+
     private List<Map<String, ?>> prepareFields() {
         List<Map<String, ?>> ret = new ArrayList<>();
         List<ReportRow> sortedRows;
 
-        sortedRows = (List<ReportRow>) data.stream().flatMap(
-                d -> getSortedStream(d.getReportRows().stream()))
-                .collect(Collectors.toList());
-
         if(!isSeparateInvoices()){
-            //Не разделять по накладным, суммировать строки
-            sortedRows.forEach(r -> {
-                r.setInvoiceNumber(null);
-                r.setDateDoc(null);
-            });
+            sortedRows = getGroupedRowsForShortReport(getReportRows());
+        } else {
+            sortedRows = getReportRows();
         }
 
         for (ReportRow inv : sortedRows) {
@@ -149,13 +163,51 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
             field.put("clientName", inv.getClientName());
             field.put("invoiceNumber", inv.getInvoiceNumber());
             field.put("rowNum", inv.getRowNum());
+            field.put("rowSum", inv.getRowSum());
             field.put("goodsName", inv.getGoodsName());
             field.put("qty", inv.getQty());
             field.put("incomePrice", inv.getIncomePrice());
             field.put("expenditurePrice",inv.getExpenditurePrice());
-            field.put("extraCharge", inv.getExtraCharge());
+            field.put("extraCharge1C", inv.getExtraCharge1C());
+            field.put("extraChargeExport", inv.getExtraChargeExport());
+            field.put("incomePriceWithoutVAT", inv.getIncomePriceWithoutVAT());
+            field.put("goodsGroup2", inv.getGoodsGroup2());
             //put others
         }
         return ret;
+    }
+
+    private void calcFields(ReportRow row){
+        row.setExtraCharge1C(row.getExpenditurePrice().subtract(row.getIncomePriceWithoutVAT())
+                .divide(row.getExpenditurePrice(), 2, RoundingMode.HALF_UP));
+        row.setExtraChargeExport(row.getExpenditurePrice().subtract(row.getIncomePrice())
+                .divide(row.getIncomePrice(), 2, RoundingMode.HALF_UP));
+    }
+
+    private List<ReportRow> getGroupedRowsForShortReport(List<ReportRow> inputRows){
+        List<ReportRow> result = new ArrayList<>();
+
+        //Из отдельных строк накладных получить суммарные строки
+        Map<String, List<ReportRow>> groupedRows = inputRows.stream()
+                .collect(groupingBy(ReportRow::getInvoiceNumber));
+
+        groupedRows.forEach((key, rows) -> {
+            ReportRow firstRow = rows.iterator().next();
+            ReportRow groupedRow = new ReportRow();
+
+            groupedRow.setInvoiceNumber(key);
+            groupedRow.setClientId(firstRow.getClientId());
+
+            groupedRow.setExtraCharge1C(rows.stream()
+                    .map(ReportRow::getExtraCharge1C)
+                    .collect(new BigDecimalAverageCollector()));
+            groupedRow.setExtraChargeExport(rows.stream()
+                    .map(ReportRow::getExtraChargeExport)
+                    .collect(new BigDecimalAverageCollector()));
+
+            result.add(groupedRow);
+        });
+
+        return getSortedStream(result.stream()).collect(Collectors.toList());
     }
 }

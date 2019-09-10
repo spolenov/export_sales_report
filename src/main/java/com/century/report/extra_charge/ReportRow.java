@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
 
+import static com.century.report.Util.getScale;
+
 @Data
 @NoArgsConstructor
 public class ReportRow {
@@ -31,6 +33,15 @@ public class ReportRow {
     private BigDecimal extraChargeExport;
     private BigDecimal rowSum;
 
+    private BigDecimal margin;
+    private BigDecimal profitability;
+
+    private BigDecimal marginWithoutVAT;
+    private BigDecimal profitabilityWithoutVAT;
+    private BigDecimal rentabilityTotal;
+
+    private Integer vat;
+
     public ReportRow(Invoice invoice, InvoiceRow row){
         this.dateDoc = new SimpleDateFormat("dd.MM.yyyy").format(invoice.getDateDoc());
         this.summa = invoice.getSumma();
@@ -43,12 +54,10 @@ public class ReportRow {
         this.qty = row.getQty();
         this.incomePrice = row.getIncomePrice();
 
-        this.incomePriceWithoutVAT = this.incomePrice.divide(
-                new BigDecimal(row.vat).divide(new BigDecimal(100), RoundingMode.HALF_UP).add(BigDecimal.ONE), RoundingMode.HALF_UP);
-
         this.expenditurePrice = row.getExpenditurePrice();
         this.extraCharge1C = row.getExtraCharge();
         this.rowSum = row.getRowSum();
         this.goodsGroup2 = row.getGoodsGroup2();
+        this.vat = row.getVat();
     }
 }

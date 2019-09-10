@@ -5,23 +5,41 @@ import com.century.report.ReportSettings;
 import com.century.report.ReportType;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.List;
 
-abstract class ExportSalesReportGenerator <T> implements ReportGenerator {
-     ReportType reportType;
-     ReportSettings settings;
-     List<T> data;
+import static com.century.report.Util.getExcelFileFullPath;
+import static java.math.RoundingMode.HALF_UP;
+
+public abstract class ExportSalesReportGenerator <T> implements ReportGenerator {
+     protected  ReportType reportType;
+     protected ReportSettings settings;
+     protected List<T> data;
 
     public ExportSalesReportGenerator(ReportType reportType, ReportSettings settings, List<T> data){
         this.reportType = reportType;
         this.settings = settings;
         this.data = data;
 
+        deleteOutputFileIfExists();
         verifyInput();
         verifyReportType();
     }
 
     public abstract File doReport();
+
+    protected BigDecimal scale(BigDecimal input){
+        return input.setScale(settings.getDecimalPlaces(), HALF_UP);
+    }
+
+    private void deleteOutputFileIfExists(){
+        try{
+            File existing = new File(getExcelFileFullPath(settings.getFilename()));
+            existing.delete();
+        } catch (Exception e){
+            //NOP
+        }
+    }
 
     private void verifyReportType(){
         if(reportType != ReportType.EXCEL){

@@ -15,4 +15,5 @@ public class ReportSettings implements Serializable {
     private Date endDate;
     private boolean detailedByDataElements;
     private LinkedList<String> groupings;
+    private int decimalPlaces;
 }

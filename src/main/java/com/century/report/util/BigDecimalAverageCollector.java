@@ -13,6 +13,8 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
 
+import static com.century.report.Util.getScale;
+
 public class BigDecimalAverageCollector implements Collector<BigDecimal, BigDecimalAverageCollector.BigDecimalAccumulator, BigDecimal> {
     @Override
     public Supplier<BigDecimalAccumulator> supplier() {
@@ -49,7 +51,7 @@ public class BigDecimalAverageCollector implements Collector<BigDecimal, BigDeci
         BigDecimal getAverage() {
             return BigDecimal.ZERO.compareTo(count) == 0 ?
                     BigDecimal.ZERO :
-                    sum.divide(count, 2, BigDecimal.ROUND_HALF_UP);
+                    sum.divide(count, getScale(), BigDecimal.ROUND_HALF_UP);
         }
 
         BigDecimalAccumulator combine(BigDecimalAccumulator another) {

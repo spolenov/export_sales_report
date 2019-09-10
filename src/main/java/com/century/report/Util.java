@@ -28,6 +28,7 @@ public class Util {
 
     private static final String LOG_FILE_NAME = "export_sales_report_%.log";
     private static final int MAX_GROUPING_COUNT = 3;
+    private static final int BIGDECIMAL_SCALE = 7;
 
     public static String getDir(){
         File f = new File(System.getProperty("java.class.path"));
@@ -139,5 +140,9 @@ public class Util {
     public static String getExcelFileFullPath(String fileName){
         return String.format("%s\\%s.xls",
                 EXCEL_FILE_PATH, fileName);
+    }
+
+    public static int getScale(){
+        return BIGDECIMAL_SCALE;
     }
 }

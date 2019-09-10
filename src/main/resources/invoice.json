@@ -1,91 +1,330 @@
 [{
-  "dateDoc": "1564617610000",
-  "summa": 2555.777,
-  "invoiceNumber": "НАКЛ000501",
+  "dateDoc": 1567675420000,
+  "summa": 728316.3,
+  "invoiceNumber": "5588",
   "client": {
-    "id": 1,
-    "name": "testClient1"
+    "id": 16800691,
+    "name": "Максимум Трейд ЧП Луганск"
   },
-  "rows": [
-    {"rowNum": 1,
-      "goodsId": 1881,
-      "goodsName": "Сепульки жареные 1 кг",
-      "qty": 1.6665,
-      "incomePrice": 704.23523,
-      "expenditurePrice": 796.115136,
-      "extraCharge": -11.0005,
-      "rowSum": 1326.725874144,
-      "goodsGroup2": "GROUP_1",
-      "vat": 18},
-    {"rowNum": 2,
-      "goodsId": 1882,
-      "goodsName": "Тессеракт куриный 2 кг",
-      "qty": 2.6665,
-      "incomePrice": 204.23523,
-      "expenditurePrice": 396.115136,
-      "extraCharge": -12.0015,
-      "rowSum": 1056.241010144,
-      "goodsGroup2": "GROUP_1",
-      "vat": 20}
-  ]
-}, {
-  "dateDoc": "1564617620000",
-  "summa": 1555.888,
-  "invoiceNumber": "НАКЛ000502",
-  "client": {
-    "id": 1,
-    "name": "testClient1"
-  },
-  "rows": [
-    {"rowNum": 1,
-      "goodsId": 1881,
-      "goodsName": "Сепульки варёные 1 кг",
-      "qty": 1.6665,
-      "incomePrice": 555,
-      "expenditurePrice": 666,
-      "extraCharge": -11.0005,
-      "rowSum": 1109.889,
-      "goodsGroup2": "GROUP_2",
-      "vat": 18},
-    {"rowNum": 2,
-      "goodsId": 1882,
-      "goodsName": "Тессеракт говяжий 2 кг",
-      "qty": 2.6665,
-      "incomePrice": 555,
-      "expenditurePrice": 666,
-      "extraCharge": -16.0015,
-      "rowSum": 1775.889,
-      "goodsGroup2": "GROUP_2",
-      "vat": 10}
-  ]
-}, {
-  "dateDoc": "1564617630000",
-  "summa": 3555.899,
-  "invoiceNumber": "НАКЛ000503",
-  "client": {
-    "id": 2,
-    "name": "testClient2"
-  },
-  "rows": [
-    {"rowNum": 1,
-      "goodsId": 1881,
-      "goodsName": "(testClient2) Сепульки жареные 1 кг",
-      "qty": 1.6665,
-      "incomePrice": 555,
-      "expenditurePrice": 666,
-      "extraCharge": -11.0005,
-      "rowSum": 1109.889,
-      "goodsGroup2": "GROUP_2",
-      "vat": 18},
-    {"rowNum": 2,
-      "goodsId": 1882,
-      "goodsName": "(testClient2) Тессеракт куриный 2 кг",
-      "qty": 2.6665,
-      "incomePrice": 555,
-      "expenditurePrice": 666,
-      "extraCharge": -16.0015,
-      "rowSum": 1775.889,
-      "goodsGroup2": "GROUP_2",
-      "vat": 10}
-  ]
+  "rows": [{
+    "rowNum": 30,
+    "goodsId": 342971,
+    "goodsName": "Носовые Платки ЗЕВА ДЕЛЮКС МЕНТОЛ 10шт.х 10",
+    "qty": 320,
+    "incomePrice": 0,
+    "expenditurePrice": 7.5,
+    "rowSum": 2400,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 31,
+    "goodsId": 337100,
+    "goodsName": "Детские бумажные салфетки для лица ЗЕВА КИДЗ 60шт (в упаковке КУБ) *18",
+    "qty": 342,
+    "incomePrice": 0,
+    "expenditurePrice": 65.56,
+    "rowSum": 22421.52,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 32,
+    "goodsId": 337101,
+    "goodsName": "Салфетки бумажные  ЗЕВА АРОМА КОЛЛЕКЦИЯ 60шт",
+    "qty": 360,
+    "incomePrice": 0,
+    "expenditurePrice": 65.56,
+    "rowSum": 23601.6,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 1,
+    "goodsId": 325587,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС 3-х сл.  БЕЛАЯ 4 рул.*14",
+    "qty": 602,
+    "incomePrice": 0,
+    "expenditurePrice": 72.36,
+    "rowSum": 43560.72,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 2,
+    "goodsId": 325588,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС 3-х сл. ПЕРСИК 4 рул.*14",
+    "qty": 420,
+    "incomePrice": 0,
+    "expenditurePrice": 72.36,
+    "rowSum": 30391.2,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 3,
+    "goodsId": 332922,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС 3-х сл. Без аромата 12 рул.*7",
+    "qty": 35,
+    "incomePrice": 0,
+    "expenditurePrice": 199.52,
+    "rowSum": 6983.2,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 4,
+    "goodsId": 325589,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС 3-х сл. ОРХИДЕЯ 4 рул.*14",
+    "qty": 364,
+    "incomePrice": 0,
+    "expenditurePrice": 72.36,
+    "rowSum": 26339.04,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 5,
+    "goodsId": 325590,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС  3-х сл. АРОМАСПА 4 рул.*14",
+    "qty": 196,
+    "incomePrice": 0,
+    "expenditurePrice": 72.36,
+    "rowSum": 14182.56,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 6,
+    "goodsId": 325591,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС 3-х сл. ПЕРСИК 8 рул.*7",
+    "qty": 224,
+    "incomePrice": 0,
+    "expenditurePrice": 137.36,
+    "rowSum": 30768.64,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 7,
+    "goodsId": 325592,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС 3-х сл.  БЕЛАЯ 8 рул.*7",
+    "qty": 266,
+    "incomePrice": 0,
+    "expenditurePrice": 137.36,
+    "rowSum": 36537.76,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 8,
+    "goodsId": 325593,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС  3-х сл. АРОМАСПА 8 рул.*7",
+    "qty": 217,
+    "incomePrice": 0,
+    "expenditurePrice": 137.36,
+    "rowSum": 29807.12,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 9,
+    "goodsId": 325594,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС 3-х сл. ОРХИДЕЯ 8 рул.*7",
+    "qty": 70,
+    "incomePrice": 0,
+    "expenditurePrice": 137.36,
+    "rowSum": 9615.2,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 10,
+    "goodsId": 325595,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕТСКАЯ 3-х сл. 4 рул.*14",
+    "qty": 476,
+    "incomePrice": 0,
+    "expenditurePrice": 72.36,
+    "rowSum": 34443.36,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 11,
+    "goodsId": 329409,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС 3-х сл 4рул ЦВЕТЫ/КОЛЛЕКЦИЯ*14",
+    "qty": 280,
+    "incomePrice": 0,
+    "expenditurePrice": 72.36,
+    "rowSum": 20260.8,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 12,
+    "goodsId": 325610,
+    "goodsName": "Туалетная Бумага ЗЕВА ДЕЛЮКС 3-х сл 8рул ЦВЕТЫ/КОЛЛЕКЦИЯ*7",
+    "qty": 252,
+    "incomePrice": 0,
+    "expenditurePrice": 137.36,
+    "rowSum": 34614.72,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 13,
+    "goodsId": 325597,
+    "goodsName": "Туалетная Бумага ЗЕВА 2-ух сл. С АРОМАТОМ ЯБЛОКА  4 рул.*24",
+    "qty": 480,
+    "incomePrice": 0,
+    "expenditurePrice": 48.8,
+    "rowSum": 23424,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 14,
+    "goodsId": 325598,
+    "goodsName": "Туалетная Бумага ЗЕВА 2-ух сл. С АРОМАТОМ ЯБЛОКА  8 рул.*12",
+    "qty": 168,
+    "incomePrice": 0,
+    "expenditurePrice": 92.46,
+    "rowSum": 15533.28,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 15,
+    "goodsId": 325599,
+    "goodsName": "Туалетная Бумага ЗЕВА  2-ух сл. БЕЛАЯ  4 рул.*24",
+    "qty": 600,
+    "incomePrice": 0,
+    "expenditurePrice": 48.8,
+    "rowSum": 29280,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 16,
+    "goodsId": 325600,
+    "goodsName": "Туалетная Бумага ЗЕВА 2-х сл 4рул Океан. Свежести*24",
+    "qty": 384,
+    "incomePrice": 0,
+    "expenditurePrice": 48.8,
+    "rowSum": 18739.2,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 17,
+    "goodsId": 325601,
+    "goodsName": "Туалетная Бумага ЗЕВА  2-ух сл. С АРОМАТОМ РОМАШКИ 4 рул.*24",
+    "qty": 216,
+    "incomePrice": 0,
+    "expenditurePrice": 48.8,
+    "rowSum": 10540.8,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 18,
+    "goodsId": 325602,
+    "goodsName": "Туалетная Бумага ЗЕВА 2-ух сл. БЕЛАЯ  12 рул.*7",
+    "qty": 49,
+    "incomePrice": 0,
+    "expenditurePrice": 134.79,
+    "rowSum": 6604.71,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 19,
+    "goodsId": 325605,
+    "goodsName": "Туалетная Бумага ЗЕВА 2-ух сл. СИРЕНЬ  8 рул.*12",
+    "qty": 204,
+    "incomePrice": 0,
+    "expenditurePrice": 92.46,
+    "rowSum": 18861.84,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 20,
+    "goodsId": 325606,
+    "goodsName": "Туалетная Бумага ЗЕВА 2-ух сл. СИРЕНЬ  4 рул.*24",
+    "qty": 720,
+    "incomePrice": 0,
+    "expenditurePrice": 48.8,
+    "rowSum": 35136,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 21,
+    "goodsId": 325609,
+    "goodsName": "Туалетная Бумага ЗЕВА Эксклюзив УЛЬТРА СОФТ 4-х сл 4 рул *14",
+    "qty": 196,
+    "incomePrice": 0,
+    "expenditurePrice": 92.99,
+    "rowSum": 18226.04,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 22,
+    "goodsId": 325612,
+    "goodsName": "Бумажные Полотенца ЗЕВА ПРЕМИУМ Декор (2 рул.)*10",
+    "qty": 350,
+    "incomePrice": 0,
+    "expenditurePrice": 60.22,
+    "rowSum": 21077,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 23,
+    "goodsId": 325611,
+    "goodsName": "Бумажные Полотенца ЗЕВА ПРЕМИУМ Декор (4 рул.)*4",
+    "qty": 845,
+    "incomePrice": 0,
+    "expenditurePrice": 109.91,
+    "rowSum": 92873.95,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 24,
+    "goodsId": 325608,
+    "goodsName": "Бумажные Полотенца ЗЕВА 2 в 1 (1 рул)*12",
+    "qty": 972,
+    "incomePrice": 0,
+    "expenditurePrice": 48.97,
+    "rowSum": 47598.84,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 25,
+    "goodsId": 342966,
+    "goodsName": "Носовые Платки ЗЕВА ПЛЮС МИКС 10шт.х10",
+    "qty": 1020,
+    "incomePrice": 0,
+    "expenditurePrice": 5.66,
+    "rowSum": 5773.2,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 26,
+    "goodsId": 342967,
+    "goodsName": "Носовые Платки ЗЕВА ДЕТСКИЕ 10шт.х10",
+    "qty": 640,
+    "incomePrice": 0,
+    "expenditurePrice": 7.5,
+    "rowSum": 4800,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 27,
+    "goodsId": 342968,
+    "goodsName": "Носовые Платки ЗЕВА ДИЗАЙН 1шт x10х24",
+    "qty": 768,
+    "incomePrice": 0,
+    "expenditurePrice": 7.5,
+    "rowSum": 5760,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 28,
+    "goodsId": 342969,
+    "goodsName": "Носовые Платки ЗЕВА ДЕЛЮКС С АРОМ. РОМАШКИ 1шт x10х24",
+    "qty": 768,
+    "incomePrice": 0,
+    "expenditurePrice": 7.5,
+    "rowSum": 5760,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }, {
+    "rowNum": 29,
+    "goodsId": 342970,
+    "goodsName": "Носовые Платки ЗЕВА ДЕЛЮКС КЛУБНИКА 10шт.х10",
+    "qty": 320,
+    "incomePrice": 0,
+    "expenditurePrice": 7.5,
+    "rowSum": 2400,
+    "goodsGroup2": "Зева",
+    "vat": 20
+  }]
 }]

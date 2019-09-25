@@ -116,6 +116,8 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
     private void setSummaryParams(Map<String, Object> params){
         params.put("qtySummary", scale(BigDecimal.valueOf(getReportRowsStream()
                 .collect(Collectors.summarizingDouble(r -> r.getQty().doubleValue())).getSum())));
+        params.put("rowSumSummary", scale(BigDecimal.valueOf(data.stream()
+                .collect(Collectors.summarizingDouble(i -> i.getSumma().doubleValue())).getSum())));
     }
 
     private Stream<ReportRow> getReportRowsStream(){
@@ -190,6 +192,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
             field.put("dateDoc", inv.getDateDoc());
             field.put("clientName", inv.getClientName());
             field.put("invoiceNumber", inv.getInvoiceNumber());
+            field.put("invoiceSum", inv.getSumma());
             field.put("rowNum", inv.getRowNum());
             field.put("rowSum", inv.getRowSum());
             field.put("goodsName", inv.getGoodsName());

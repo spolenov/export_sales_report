@@ -45,7 +45,7 @@
 	<field name="profitabilityWithoutVAT" class="java.math.BigDecimal"/>
 	<field name="incomeSumWithoutVAT" class="java.math.BigDecimal"/>
 	<field name="invoiceSum" class="java.math.BigDecimal"/>
-	<variable name="rowSumTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Average">
+	<variable name="rowSumTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Sum">
 		<variableExpression><![CDATA[$F{invoiceSum}]]></variableExpression>
 	</variable>
 	<variable name="incomeSumWithVAT" class="java.math.BigDecimal" resetType="None">
@@ -76,15 +76,15 @@
 		<variableExpression><![CDATA[$F{margin}]]></variableExpression>
 	</variable>
 	<variable name="profitabilityWithVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2">
-		<variableExpression><![CDATA[($V{rowSumTotal}.subtract($V{incomeSumWithVATTotal})).divide($V{rowSumTotal}, $P{decimalPlaces}, RoundingMode.HALF_UP)]]></variableExpression>
+		<variableExpression><![CDATA[$V{rowSumTotal} == null || $V{rowSumTotal}.equals(BigDecimal.ZERO)? BigDecimal.ZERO:($V{rowSumTotal}.subtract($V{incomeSumWithVATTotal})).divide($V{rowSumTotal}, $P{decimalPlaces}, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="marginWithoutVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Sum">
 		<variableExpression><![CDATA[$F{marginWithoutVAT}]]></variableExpression>
 	</variable>
 	<variable name="profitabilityWithoutVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2">
-		<variableExpression><![CDATA[($V{rowSumTotal}.subtract($V{incomeSumWithoutVATTotal})).divide($V{rowSumTotal}, $P{decimalPlaces}, RoundingMode.HALF_UP)]]></variableExpression>
+		<variableExpression><![CDATA[$V{rowSumTotal} == null || $V{rowSumTotal}.equals(BigDecimal.ZERO)? BigDecimal.ZERO:($V{rowSumTotal}.subtract($V{incomeSumWithoutVATTotal})).divide($V{rowSumTotal}, $P{decimalPlaces}, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
-	<variable name="extraCharge1CAvgSummary" class="java.math.BigDecimal" resetType="None" calculation="Average">
+	<variable name="extraCharge1CAvgSummary" class="java.math.BigDecimal" resetType="None" calculation="Sum">
 		<variableExpression><![CDATA[$V{extraCharge1CAvg}]]></variableExpression>
 	</variable>
 	<variable name="qtySummary" class="java.math.BigDecimal" resetType="None">
@@ -93,7 +93,7 @@
 	<variable name="qtyTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Sum">
 		<variableExpression><![CDATA[$F{qty}]]></variableExpression>
 	</variable>
-	<variable name="extraChargeExportAvgSummary" class="java.math.BigDecimal" resetType="None" calculation="Average">
+	<variable name="extraChargeExportAvgSummary" class="java.math.BigDecimal" resetType="None" calculation="Sum">
 		<variableExpression><![CDATA[$V{extraChargeExportAvg}]]></variableExpression>
 	</variable>
 	<variable name="rowSumSummary" class="java.math.BigDecimal" resetType="None" calculation="Sum">
@@ -106,7 +106,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></groupExpression>
 		<groupHeader>
 			<band height="121">
 				<textField isStretchWithOverflow="true">
-					<reportElement x="0" y="0" width="536" height="20" uuid="9dba0aa9-5dfb-4c21-901c-6a23d204b486"/>
+					<reportElement x="0" y="0" width="554" height="20" uuid="9dba0aa9-5dfb-4c21-901c-6a23d204b486"/>
 					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 						<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					</box>
@@ -134,7 +134,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[7]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="598" y="20" width="58" height="15" uuid="dae2a386-4cf5-4823-85c0-4ce9e6a342e1">
+					<reportElement x="598" y="20" width="70" height="15" uuid="dae2a386-4cf5-4823-85c0-4ce9e6a342e1">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -149,7 +149,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[9]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="750" y="35" width="98" height="25" uuid="1d9b4600-308e-49c0-9a9c-c322976a9b59">
+					<reportElement x="762" y="35" width="98" height="25" uuid="1d9b4600-308e-49c0-9a9c-c322976a9b59">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
@@ -179,7 +179,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[1]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="848" y="60" width="56" height="46" uuid="7eb9b507-b851-4bee-857a-6843d2e11fbf">
+					<reportElement x="860" y="60" width="56" height="46" uuid="7eb9b507-b851-4bee-857a-6843d2e11fbf">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
@@ -194,7 +194,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[Маржа]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="806" y="60" width="42" height="46" uuid="e8c64ba2-e90b-4432-859c-1919f76ce45a">
+					<reportElement x="818" y="60" width="42" height="46" uuid="e8c64ba2-e90b-4432-859c-1919f76ce45a">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
@@ -209,7 +209,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[Рентабельность - по общей сумме]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="750" y="60" width="56" height="46" uuid="fd119965-a136-44fb-add1-384c8b0922af">
+					<reportElement x="762" y="60" width="56" height="46" uuid="fd119965-a136-44fb-add1-384c8b0922af">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
@@ -224,7 +224,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[Маржа]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="806" y="20" width="42" height="15" uuid="9d5fe1ed-050b-423d-9004-3a2464068950">
+					<reportElement x="818" y="20" width="42" height="15" uuid="9d5fe1ed-050b-423d-9004-3a2464068950">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -254,7 +254,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[8]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="656" y="20" width="48" height="15" uuid="4b7fe72d-d95c-4ec8-bc8f-119ca12c260d">
+					<reportElement x="668" y="20" width="48" height="15" uuid="4b7fe72d-d95c-4ec8-bc8f-119ca12c260d">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -269,7 +269,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[10]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="656" y="35" width="94" height="71" uuid="6d9494c0-140b-4711-a7a5-9233be565fe3"/>
+					<reportElement x="668" y="35" width="94" height="71" uuid="6d9494c0-140b-4711-a7a5-9233be565fe3"/>
 					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -295,7 +295,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[Кол-во]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="750" y="20" width="56" height="15" uuid="ed441008-bc0f-4653-8b9b-24c5a5dd327c">
+					<reportElement x="762" y="20" width="56" height="15" uuid="ed441008-bc0f-4653-8b9b-24c5a5dd327c">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -393,7 +393,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[Приходная цена]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="904" y="60" width="44" height="46" uuid="81b601d5-708c-428b-bf5c-666d542e4067">
+					<reportElement x="916" y="60" width="44" height="46" uuid="81b601d5-708c-428b-bf5c-666d542e4067">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -424,7 +424,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[2]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="704" y="20" width="46" height="15" uuid="0c0f2138-5105-4636-be81-49abb0c97820">
+					<reportElement x="716" y="20" width="46" height="15" uuid="0c0f2138-5105-4636-be81-49abb0c97820">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -452,7 +452,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[Расх. цена]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="598" y="35" width="58" height="71" uuid="6aa2e985-f3eb-4457-aa9e-c33aea1c8147"/>
+					<reportElement x="598" y="35" width="70" height="71" uuid="6aa2e985-f3eb-4457-aa9e-c33aea1c8147"/>
 					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -492,7 +492,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[№ п/п]]></text>
 				</staticText>
 				<rectangle>
-					<reportElement x="536" y="0" width="412" height="20" uuid="57fc6f5d-ddbc-45d0-b5e8-820eda5c5007"/>
+					<reportElement x="555" y="0" width="405" height="20" uuid="57fc6f5d-ddbc-45d0-b5e8-820eda5c5007"/>
 					<graphicElement>
 						<pen lineWidth="0.5" lineStyle="Solid"/>
 					</graphicElement>
@@ -589,7 +589,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[Экспорт]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="598" y="106" width="58" height="15" uuid="739e41b8-c6d9-45a3-bd80-e139b660e0ae">
+					<reportElement x="598" y="106" width="70" height="15" uuid="739e41b8-c6d9-45a3-bd80-e139b660e0ae">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -604,7 +604,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[руб]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="656" y="106" width="48" height="15" uuid="d8ab6b16-4937-4348-888e-4a08d2a4e7b0">
+					<reportElement x="668" y="106" width="48" height="15" uuid="d8ab6b16-4937-4348-888e-4a08d2a4e7b0">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -619,7 +619,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[с НДС]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="704" y="106" width="46" height="15" uuid="6119c345-dfd4-49bb-aac4-c74b491fb65c">
+					<reportElement x="716" y="106" width="46" height="15" uuid="6119c345-dfd4-49bb-aac4-c74b491fb65c">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -634,7 +634,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[без НДС]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="750" y="106" width="56" height="15" uuid="ebe92047-2b2a-4549-b749-da53a9f91ff4">
+					<reportElement x="762" y="106" width="56" height="15" uuid="ebe92047-2b2a-4549-b749-da53a9f91ff4">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -649,7 +649,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[руб]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="806" y="106" width="42" height="15" uuid="559a06b9-b8df-491b-8cbd-29ff3d8a1c3f">
+					<reportElement x="818" y="106" width="42" height="15" uuid="559a06b9-b8df-491b-8cbd-29ff3d8a1c3f">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -664,7 +664,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[%]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="904" y="106" width="44" height="15" uuid="803b627f-31fe-4643-9e69-9fd357504e52">
+					<reportElement x="916" y="106" width="44" height="15" uuid="803b627f-31fe-4643-9e69-9fd357504e52">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -679,7 +679,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[%]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="848" y="106" width="56" height="15" uuid="b2b7a8ac-e4cc-43d2-ad00-48b6d1332d64">
+					<reportElement x="860" y="106" width="56" height="15" uuid="b2b7a8ac-e4cc-43d2-ad00-48b6d1332d64">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -694,20 +694,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[руб]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="714" y="-30" width="120" height="15" uuid="f770dcf4-b15c-450e-a768-13d511ef6f9e"/>
-					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
-						<pen lineWidth="0.5" lineColor="#8F8F8F"/>
-						<topPen lineWidth="0.5" lineColor="#8F8F8F"/>
-						<leftPen lineWidth="0.5" lineColor="#8F8F8F"/>
-						<rightPen lineWidth="0.5" lineColor="#8F8F8F"/>
-					</box>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<text><![CDATA[Дата формирования:]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="848" y="20" width="56" height="15" uuid="3b6229d3-f89d-443d-a0e7-99ec5e9dafc2">
+					<reportElement x="860" y="20" width="56" height="15" uuid="3b6229d3-f89d-443d-a0e7-99ec5e9dafc2">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -722,7 +709,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[14]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="904" y="20" width="44" height="15" uuid="9ff4f5f5-98a6-407d-89f5-f5df42395151">
+					<reportElement x="916" y="20" width="44" height="15" uuid="9ff4f5f5-98a6-407d-89f5-f5df42395151">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box>
@@ -737,7 +724,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<text><![CDATA[15]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="848" y="35" width="100" height="25" uuid="0f62b59d-d5a2-4c8e-93db-1356f8c1a48e">
+					<reportElement x="860" y="35" width="100" height="25" uuid="0f62b59d-d5a2-4c8e-93db-1356f8c1a48e">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					</reportElement>
 					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
@@ -751,12 +738,6 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					</textElement>
 					<text><![CDATA[Без НДС]]></text>
 				</staticText>
-				<rectangle>
-					<reportElement x="368" y="-30" width="346" height="15" uuid="74c301aa-bf5b-4b58-b9ca-9e77b71b24d6"/>
-					<graphicElement>
-						<pen lineWidth="0.5" lineColor="#8F8F8F"/>
-					</graphicElement>
-				</rectangle>
 			</band>
 		</groupHeader>
 		<groupFooter>
@@ -782,7 +763,7 @@ $P{grouping2}.equals("invoiceNumber")? "Накладная №" + $F{invoiceNumb
 $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="750" y="0" width="56" height="18" uuid="73b213b9-880e-407e-8ac0-65ba5202236b">
+					<reportElement x="762" y="0" width="56" height="18" uuid="73b213b9-880e-407e-8ac0-65ba5202236b">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -795,7 +776,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{marginWithVATTotal}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="598" y="0" width="58" height="18" uuid="80ae1150-e53f-4c32-8748-07ae2d5f0e25">
+					<reportElement x="598" y="0" width="70" height="18" uuid="80ae1150-e53f-4c32-8748-07ae2d5f0e25">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -808,7 +789,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{rowSumTotal}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00%">
-					<reportElement x="904" y="0" width="44" height="18" uuid="0978fbe4-c6bb-43bc-93cc-c80946802a32">
+					<reportElement x="916" y="0" width="44" height="18" uuid="0978fbe4-c6bb-43bc-93cc-c80946802a32">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -821,7 +802,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{profitabilityWithoutVATTotal}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="848" y="0" width="56" height="18" uuid="03413246-b13c-4e60-a626-7f9eb9e314c4">
+					<reportElement x="860" y="0" width="56" height="18" uuid="03413246-b13c-4e60-a626-7f9eb9e314c4">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -834,7 +815,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{marginWithoutVATTotal}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="656" y="0" width="48" height="18" uuid="30c6caf4-2e89-4fcb-91af-620595cd8c1a">
+					<reportElement x="668" y="0" width="48" height="18" uuid="30c6caf4-2e89-4fcb-91af-620595cd8c1a">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -861,7 +842,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{extraCharge1CAvg}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="704" y="0" width="46" height="18" uuid="68ee1349-00b9-4faa-8992-d64f8c0a979f">
+					<reportElement x="716" y="0" width="46" height="18" uuid="68ee1349-00b9-4faa-8992-d64f8c0a979f">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<printWhenExpression><![CDATA[$P{isShortReport}]]></printWhenExpression>
@@ -888,7 +869,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{extraChargeExportAvg}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00%">
-					<reportElement x="806" y="0" width="42" height="18" uuid="b9ac16fd-c438-4668-b213-d7bab45ffe53">
+					<reportElement x="818" y="0" width="42" height="18" uuid="b9ac16fd-c438-4668-b213-d7bab45ffe53">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -905,7 +886,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 		<groupFooter>
 			<band height="15">
 				<textField pattern="#,##0.00">
-					<reportElement x="598" y="0" width="58" height="15" uuid="9ba7850f-3178-4445-873f-f8f309d6f391">
+					<reportElement x="598" y="0" width="70" height="15" uuid="9ba7850f-3178-4445-873f-f8f309d6f391">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -915,10 +896,10 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="8" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{rowSumTotal}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{invoiceSum}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement x="656" y="0" width="48" height="15" uuid="31562efd-7b2f-4deb-ae19-8074d73a2459">
+					<reportElement x="668" y="0" width="48" height="15" uuid="31562efd-7b2f-4deb-ae19-8074d73a2459">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -958,7 +939,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{extraChargeExportAvg}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement x="704" y="0" width="46" height="15" uuid="c196dd65-b3d6-4f2e-bc74-eec4f768e80b">
+					<reportElement x="716" y="0" width="46" height="15" uuid="c196dd65-b3d6-4f2e-bc74-eec4f768e80b">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -971,7 +952,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{incomeSumWithoutVATTotal}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement x="750" y="0" width="56" height="15" uuid="3d3eb77b-6043-49b9-96c3-9506b44c1be8">
+					<reportElement x="762" y="0" width="56" height="15" uuid="3d3eb77b-6043-49b9-96c3-9506b44c1be8">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -984,7 +965,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{marginWithVATTotal}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00%">
-					<reportElement x="806" y="0" width="42" height="15" uuid="ea439e2f-6d9b-4af6-8306-42e3ca0ef58b">
+					<reportElement x="818" y="0" width="42" height="15" uuid="ea439e2f-6d9b-4af6-8306-42e3ca0ef58b">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -997,7 +978,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{profitabilityWithVATTotal}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
-					<reportElement x="848" y="0" width="56" height="15" uuid="c80cbead-9a35-4a2a-abf3-3dc78d86f3da">
+					<reportElement x="860" y="0" width="56" height="15" uuid="c80cbead-9a35-4a2a-abf3-3dc78d86f3da">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -1010,7 +991,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textFieldExpression><![CDATA[$V{marginWithoutVATTotal}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00%">
-					<reportElement x="904" y="0" width="44" height="15" uuid="5f458a92-6d89-4be8-b814-4fb748722e7f">
+					<reportElement x="916" y="0" width="44" height="15" uuid="5f458a92-6d89-4be8-b814-4fb748722e7f">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 					</reportElement>
@@ -1052,7 +1033,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 	<title>
 		<band height="14">
 			<staticText>
-				<reportElement x="0" y="-16" width="368" height="30" uuid="6005e1d6-dc91-4020-b673-a304c275d5c5"/>
+				<reportElement x="0" y="-16" width="380" height="30" uuid="6005e1d6-dc91-4020-b673-a304c275d5c5"/>
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<pen lineWidth="0.5" lineColor="#8F8F8F"/>
 				</box>
@@ -1063,7 +1044,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<text><![CDATA[Отчёт по фактической наценке]]></text>
 			</staticText>
 			<textField pattern="dd.MM.yyyy HH:mm:ss">
-				<reportElement x="834" y="-16" width="114" height="15" uuid="707b9e24-9917-48a8-b12b-db8788f4b31b"/>
+				<reportElement x="846" y="-16" width="114" height="15" uuid="707b9e24-9917-48a8-b12b-db8788f4b31b"/>
 				<box>
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5" lineColor="#8F8F8F"/>
@@ -1077,7 +1058,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA[$P{dateCalc}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="714" y="-1" width="234" height="15" uuid="09782d77-b98b-48b4-999f-8f7566e390af"/>
+				<reportElement x="726" y="-1" width="234" height="15" uuid="09782d77-b98b-48b4-999f-8f7566e390af"/>
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5" lineColor="#8F8F8F"/>
@@ -1090,11 +1071,30 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA["Программа: " + $P{programName}]]></textFieldExpression>
 			</textField>
 			<rectangle>
-				<reportElement x="368" y="-1" width="346" height="15" uuid="3f586193-fd8f-45c0-857d-bda792b560bc"/>
+				<reportElement x="380" y="-1" width="346" height="15" uuid="3f586193-fd8f-45c0-857d-bda792b560bc"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#8F8F8F"/>
 				</graphicElement>
 			</rectangle>
+			<rectangle>
+				<reportElement x="380" y="-16" width="346" height="15" uuid="74c301aa-bf5b-4b58-b9ca-9e77b71b24d6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#8F8F8F"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="726" y="-16" width="120" height="15" uuid="f770dcf4-b15c-450e-a768-13d511ef6f9e"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<pen lineWidth="0.5" lineColor="#8F8F8F"/>
+					<topPen lineWidth="0.5" lineColor="#8F8F8F"/>
+					<leftPen lineWidth="0.5" lineColor="#8F8F8F"/>
+					<rightPen lineWidth="0.5" lineColor="#8F8F8F"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Дата формирования:]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
@@ -1193,7 +1193,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA[$F{incomePrice}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0.00">
-				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="598" y="0" width="58" height="15" isPrintWhenDetailOverflows="true" uuid="b1e63f1d-4ec7-4445-b496-b5fc7db229b9">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="598" y="0" width="70" height="15" isPrintWhenDetailOverflows="true" uuid="b1e63f1d-4ec7-4445-b496-b5fc7db229b9">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 				</reportElement>
@@ -1206,7 +1206,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA[$F{rowSum}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0.00">
-				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="656" y="0" width="48" height="15" isPrintWhenDetailOverflows="true" uuid="722bc9ae-c727-4532-bd70-9846dcda9fb2">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="668" y="0" width="48" height="15" isPrintWhenDetailOverflows="true" uuid="722bc9ae-c727-4532-bd70-9846dcda9fb2">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 				</reportElement>
@@ -1245,7 +1245,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA[$F{extraChargeExport}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0.00">
-				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="750" y="0" width="56" height="15" isPrintWhenDetailOverflows="true" uuid="fd39e70d-e936-4772-8e10-4cd2d8da3ac8">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="762" y="0" width="56" height="15" isPrintWhenDetailOverflows="true" uuid="fd39e70d-e936-4772-8e10-4cd2d8da3ac8">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 				</reportElement>
@@ -1258,7 +1258,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA[$F{margin}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0.00%">
-				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="806" y="0" width="42" height="15" isPrintWhenDetailOverflows="true" uuid="d7112455-c8a7-4c0c-9c23-dacb6d736424">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="818" y="0" width="42" height="15" isPrintWhenDetailOverflows="true" uuid="d7112455-c8a7-4c0c-9c23-dacb6d736424">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 				</reportElement>
@@ -1271,7 +1271,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA[$F{profitability}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0.00">
-				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="848" y="0" width="56" height="15" isPrintWhenDetailOverflows="true" uuid="29e46cc2-853d-43d3-9ca2-9b86af2f44ff">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="860" y="0" width="56" height="15" isPrintWhenDetailOverflows="true" uuid="29e46cc2-853d-43d3-9ca2-9b86af2f44ff">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 				</reportElement>
@@ -1284,7 +1284,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA[$F{marginWithoutVAT}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0.00%">
-				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="904" y="0" width="44" height="15" isPrintWhenDetailOverflows="true" uuid="9d6a6800-c018-45a5-a476-ab4973131b53">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="916" y="0" width="44" height="15" isPrintWhenDetailOverflows="true" uuid="9d6a6800-c018-45a5-a476-ab4973131b53">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 				</reportElement>
@@ -1297,7 +1297,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA[$F{profitabilityWithoutVAT}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0.00">
-				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="704" y="0" width="46" height="15" isPrintWhenDetailOverflows="true" uuid="20a83e24-0973-4eb3-a4f9-915fe62f6b3a">
+				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="716" y="0" width="46" height="15" isPrintWhenDetailOverflows="true" uuid="20a83e24-0973-4eb3-a4f9-915fe62f6b3a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<printWhenExpression><![CDATA[!$P{isShortReport}]]></printWhenExpression>
 				</reportElement>
@@ -1375,7 +1375,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA[$V{extraChargeExportAvgSummary}]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report" pattern="#,##0.00">
-				<reportElement x="598" y="0" width="58" height="15" uuid="911c1e37-de20-4b04-b614-4e2e04a01008">
+				<reportElement x="598" y="0" width="70" height="15" uuid="911c1e37-de20-4b04-b614-4e2e04a01008">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box padding="0">

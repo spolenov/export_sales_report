@@ -25,6 +25,7 @@ import java.util.stream.Stream;
 
 import static com.century.report.Util.*;
 import static com.century.report.extra_charge.Grouping.*;
+import static java.math.BigDecimal.ONE;
 import static java.math.BigDecimal.ZERO;
 import static java.math.RoundingMode.HALF_UP;
 import static net.sf.jasperreports.engine.JasperFillManager.fillReport;
@@ -198,7 +199,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
             field.put("goodsName", inv.getGoodsName());
             field.put("qty", inv.getQty());
             field.put("incomePrice", inv.getIncomePrice());
-            field.put("expenditurePrice",inv.getExpenditurePrice());
+            field.put("expenditurePrice", inv.getExpenditurePrice());
             field.put("extraCharge1C", inv.getExtraCharge1C());
             field.put("extraChargeExport", inv.getExtraChargeExport());
             field.put("incomePriceWithoutVAT", inv.getIncomePriceWithoutVAT());
@@ -212,8 +213,9 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
     }
 
     private void calcFields(ReportRow row){
-        row.setExtraChargeExport(row.getIncomePrice()
-                .compareTo(ZERO) <= 0? ZERO: row.getExpenditurePrice().subtract(row.getIncomePrice())
+        row.setExtraChargeExport(
+                row.getIncomePrice().compareTo(ZERO) <= 0?
+                ZERO: row.getExpenditurePrice().subtract(row.getIncomePrice())
                 .divide(row.getIncomePrice(), getScale(), HALF_UP));
 
         row.setIncomePriceWithoutVAT (
@@ -232,11 +234,11 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
         row.setMarginWithoutVAT(
                 row.getRowSum().subtract(row.getIncomePriceWithoutVAT().multiply(row.getQty())));
 
-        row.setProfitability(
+        row.setProfitability(row.getRowSum() == null || row.getRowSum().equals(ZERO)? ZERO:
                 row.getMargin().divide(
                         row.getRowSum(), settings.getDecimalPlaces(), HALF_UP));
 
-        row.setProfitabilityWithoutVAT(
+        row.setProfitabilityWithoutVAT(row.getRowSum() == null || row.getRowSum().equals(ZERO)? ZERO:
                 row.getMarginWithoutVAT().divide(
                         row.getRowSum(), settings.getDecimalPlaces(), HALF_UP));
     }

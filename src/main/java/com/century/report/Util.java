@@ -27,7 +27,7 @@ public class Util {
     private static final String INVOICE_FILE_NAME = "invoice.json";
 
     private static final String LOG_FILE_NAME = "export_sales_report_%.log";
-    private static final int MAX_GROUPING_COUNT = 3;
+    private static final int MAX_GROUPING_COUNT = 2;
     private static final int BIGDECIMAL_SCALE = 7;
 
     public static String getDir(){

@@ -13,7 +13,7 @@ public class ReportSettings implements Serializable {
     private String programName;
     private Date startDate;
     private Date endDate;
-    private boolean detailedByDataElements;
+    private boolean detailed;
     private LinkedList<String> groupings;
     private int decimalPlaces;
 }

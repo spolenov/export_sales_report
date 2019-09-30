@@ -55,7 +55,7 @@ public class ReportServiceImpl {
                 throw new ExportSalesReportException("Result file is null");
             }
 
-            Util.logToFile(settings.getUsername(),
+            logToFile(settings.getUsername(),
                     String.format(
                             "Finished %s report generation. Format: %s. File size is %d KB",
                             reportName, type, result.length()/ (1024)));
@@ -84,8 +84,14 @@ public class ReportServiceImpl {
 
         if(groupingsCount > getMaxGroupingCount()){
             throw new ExportSalesReportException(
-                    String.format("Max groupings count is %d, given count is %d.",
-                            getMaxGroupingCount(), groupingsCount));
+                    String.format("Полученное количество группировок: %d, максимально допустимое - %d.",
+                            groupingsCount, getMaxGroupingCount()));
+        }
+
+        if(settings.getStartDate() == null ||
+                settings.getEndDate() == null ||
+                settings.getEndDate().before(settings.getStartDate())){
+            throw new ExportSalesReportException("Неверный интервал дат для отчёта.");
         }
     }
 

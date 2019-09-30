@@ -87,6 +87,14 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
 
     private JasperEntity getEntity(){
         Map<String, Object> params = new HashMap<>();
+
+        //Отрежем накладные, которые не входят в период
+        processDataByPeriod();
+
+        if(data.isEmpty()){
+            throw new ExportSalesReportException("Нет данных по заданным параметрам.");
+        }
+
         setCommonParams(params);
         setSummaryParams(params);
 
@@ -132,15 +140,13 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
 
         List groupings = settings.getGroupings();
 
-        if(groupings.size() == 2){
-            reportName = "extra_charge_2";
-        }
-        else if(groupings.size() == 3){
-            reportName = "extra_charge_3";
-        }else {
+        if(groupings.size() > getMaxGroupingCount()){
             throw new ExportSalesReportException(
-                    String.format("Wrong groupings count: %d", groupings.size()));
+                    String.format("Неверное количество группировок: %d", groupings.size()));
         }
+
+        reportName = "extra_charge_" + groupings.size() + (settings.isDetailed()? "": "_short");
+
         return folder + reportName + ".jasper";
     }
 
@@ -169,7 +175,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
     }
 
     private boolean isShortReport(){
-        return !settings.isDetailedByDataElements();
+        return !settings.isDetailed();
     }
 
     private List<ReportRow> getReportRows(){
@@ -222,7 +228,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
                 row.getIncomePrice().divide(
                     new BigDecimal(row.getVat())
                             .divide(new BigDecimal(100), getScale(), HALF_UP)
-                            .add(BigDecimal.ONE), settings.getDecimalPlaces(), HALF_UP));
+                            .add(BigDecimal.ONE), 15, HALF_UP));
 
         row.setExtraCharge1C(row.getIncomePriceWithoutVAT().compareTo(ZERO) <=0 ? ZERO:
                 row.getExpenditurePrice().subtract(row.getIncomePriceWithoutVAT())
@@ -246,5 +252,10 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
     private void prepareGroupings(){
         this.settings.getGroupings()
                 .removeIf(g -> g == null || g.equals("null") || g.isEmpty());
+    }
+
+    private void processDataByPeriod(){
+        this.data.removeIf(d -> d.getDateDoc().getTime() < settings.getStartDate().getTime() ||
+                d.getDateDoc().getTime() >= settings.getEndDate().getTime());
     }
 }

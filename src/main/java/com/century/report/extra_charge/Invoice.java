@@ -24,7 +24,7 @@ public class Invoice {
                 .orElse(null);
     }
 
-    public List<ReportRow> getReportRows(){
+    List<ReportRow> getReportRows(){
         return this.rows.stream()
                 .map(r -> new ReportRow(this, r))
                 .collect(Collectors.toList());

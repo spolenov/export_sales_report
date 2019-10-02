@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import static com.century.report.Util.getExcelFileFullPath;
+import static com.century.report.Util.logToFile;
 import static java.math.RoundingMode.HALF_UP;
 
 public abstract class ExportSalesReportGenerator <T> implements ReportGenerator {
@@ -21,42 +22,43 @@ public abstract class ExportSalesReportGenerator <T> implements ReportGenerator 
         this.settings = settings;
         this.data = data;
 
-        deleteOutputFileIfExists();
+        if(!deleteOutputFileIfExists()){
+            logToFile(settings.getUsername(), "Failed to delete output file.");
+        }
         verifyInput();
         verifyReportType();
     }
-
-    public abstract File doReport();
 
     protected BigDecimal scale(BigDecimal input){
         return input.setScale(settings.getDecimalPlaces(), HALF_UP);
     }
 
-    private void deleteOutputFileIfExists(){
+    private boolean deleteOutputFileIfExists(){
         try{
             File existing = new File(getExcelFileFullPath(settings.getFilename()));
-            existing.delete();
-        } catch (Exception e){
+            return existing.delete();
+        } catch (Exception e) {
             //NOP
         }
+        return false;
     }
 
     private void verifyReportType(){
         if(reportType != ReportType.EXCEL){
             throw new IllegalArgumentException(
-                    String.format("Report type %s is not supported.",reportType));
+                    String.format("Вид отчёта (%s) не поддерживается.", reportType));
         }
     }
 
     private void verifyInput(){
         if(reportType == null){
-            throw new ExportSalesReportException("Report type is null.");
+            throw new ExportSalesReportException("Не задан тип отчёта.");
         }
         if(settings == null){
-            throw new ExportSalesReportException("Settings are null.");
+            throw new ExportSalesReportException("Не заданы настройки для отчёта.");
         }
         if(data == null){
-            throw new ExportSalesReportException("Data is null.");
+            throw new ExportSalesReportException("Не заданы входные данные для отчёта.");
         }
     }
 }

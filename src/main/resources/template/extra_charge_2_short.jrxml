@@ -47,10 +47,6 @@
 	<field name="profitabilityWithoutVAT" class="java.math.BigDecimal"/>
 	<field name="incomeSumWithoutVAT" class="java.math.BigDecimal"/>
 	<field name="invoiceSum" class="java.math.BigDecimal"/>
-	<field name="profitabilityByGroup1" class="java.math.BigDecimal"/>
-	<field name="profitabilityWithoutVATByGroup1" class="java.math.BigDecimal"/>
-	<field name="profitabilityByGroup2" class="java.math.BigDecimal"/>
-	<field name="profitabilityWithoutVATByGroup2" class="java.math.BigDecimal"/>
 	<variable name="rowSumTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Sum">
 		<variableExpression><![CDATA[$F{invoiceSum}]]></variableExpression>
 	</variable>
@@ -81,14 +77,14 @@
 	<variable name="marginWithVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Sum">
 		<variableExpression><![CDATA[$F{margin}]]></variableExpression>
 	</variable>
-	<variable name="profitabilityWithVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Average">
-		<variableExpression><![CDATA[$F{profitabilityByGroup2}]]></variableExpression>
+	<variable name="profitabilityWithVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2">
+		<variableExpression><![CDATA[($F{invoiceSum}.subtract($V{incomeSumWithVATTotal})).divide($F{invoiceSum}, $P{decimalPlaces}, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="marginWithoutVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Sum">
 		<variableExpression><![CDATA[$F{marginWithoutVAT}]]></variableExpression>
 	</variable>
-	<variable name="profitabilityWithoutVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Average">
-		<variableExpression><![CDATA[$F{profitabilityWithoutVATByGroup2}]]></variableExpression>
+	<variable name="profitabilityWithoutVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2">
+		<variableExpression><![CDATA[($F{invoiceSum}.subtract($V{incomeSumWithoutVATTotal})).divide($F{invoiceSum}, $P{decimalPlaces}, RoundingMode.HALF_UP)]]></variableExpression>
 	</variable>
 	<variable name="extraCharge1CAvgSummary" class="java.math.BigDecimal" incrementType="Group" incrementGroup="grouping2" calculation="Average">
 		<variableExpression><![CDATA[$V{extraCharge1CAvg}]]></variableExpression>
@@ -122,9 +118,6 @@
 	</variable>
 	<variable name="profitabilityWithoutVATSummary" class="java.math.BigDecimal" incrementType="Group" incrementGroup="grouping2">
 		<variableExpression><![CDATA[($P{rowSumSummary}.subtract($V{incomeSumWithoutVATSummary})).divide($P{rowSumSummary}, $P{decimalPlaces}, RoundingMode.HALF_UP)]]></variableExpression>
-	</variable>
-	<variable name="invoiceSum" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Sum">
-		<variableExpression><![CDATA[$F{rowSum}]]></variableExpression>
 	</variable>
 	<group name="grouping1">
 		<groupExpression><![CDATA[$P{grouping1}.equals("clientName")? $F{clientName}: 
@@ -772,9 +765,7 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 		</groupFooter>
 	</group>
 	<group name="grouping2">
-		<groupExpression><![CDATA[$P{grouping2}.equals("clientName")? $F{clientName}: 
-$P{grouping2}.equals("invoiceNumber")? "Накладная №" + $F{invoiceNumber} + " от " + $F{dateDoc}: 
-$P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></groupExpression>
+		<groupExpression><![CDATA[$F{invoiceNumber}]]></groupExpression>
 		<groupHeader>
 			<band height="18">
 				<textField isStretchWithOverflow="true">
@@ -925,7 +916,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="8" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{invoiceSum}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{invoiceSum}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00">
 					<reportElement x="668" y="0" width="64" height="15" uuid="31562efd-7b2f-4deb-ae19-8074d73a2459">
@@ -1087,7 +1078,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<textFieldExpression><![CDATA[$P{dateCalc}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="392" y="-16" width="206" height="15" uuid="c517e565-977d-408c-ad4e-5b7ea5521dbc"/>
+				<reportElement x="392" y="-16" width="188" height="15" uuid="c517e565-977d-408c-ad4e-5b7ea5521dbc"/>
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<pen lineWidth="0.5" lineColor="#8F8F8F"/>
 					<topPen lineWidth="0.5" lineColor="#8F8F8F"/>
@@ -1132,7 +1123,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<text><![CDATA[Дата формирования:]]></text>
 			</staticText>
 			<textField pattern="dd.MM.yyyy HH:mm:ss">
-				<reportElement x="598" y="-16" width="134" height="15" uuid="e83e2700-f134-455e-b066-f3a8c0381657"/>
+				<reportElement x="580" y="-16" width="152" height="15" uuid="e83e2700-f134-455e-b066-f3a8c0381657"/>
 				<box>
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5" lineColor="#8F8F8F"/>

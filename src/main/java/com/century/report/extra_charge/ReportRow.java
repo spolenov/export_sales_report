@@ -4,10 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
-
-import static com.century.report.Util.getScale;
 
 @Data
 @NoArgsConstructor
@@ -40,9 +37,15 @@ public class ReportRow {
     private BigDecimal profitabilityWithoutVAT;
     private BigDecimal rentabilityTotal;
 
+    private BigDecimal profitabilityByGroup1;
+    private BigDecimal profitabilityWithoutVATByGroup1;
+
+    private BigDecimal profitabilityByGroup2;
+    private BigDecimal profitabilityWithoutVATByGroup2;
+
     private Integer vat;
 
-    public ReportRow(Invoice invoice, InvoiceRow row){
+    ReportRow(Invoice invoice, InvoiceRow row){
         this.dateDoc = new SimpleDateFormat("dd.MM.yyyy").format(invoice.getDateDoc());
         this.summa = invoice.getSumma();
         this.clientId = invoice.getClient().getId();

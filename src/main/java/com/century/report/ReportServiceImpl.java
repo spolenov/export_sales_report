@@ -14,10 +14,9 @@ import static com.century.report.Util.*;
 
 @Slf4j
 public class ReportServiceImpl {
-    private static ReportSettings settings;
+    private static ReportSettings settings = getSettings();
 
     public void doReport(ReportName reportName, ReportType type) {
-        settings = getSettings();
         String username = settings.getUsername();
 
         Util.logToFile(username,
@@ -32,7 +31,7 @@ public class ReportServiceImpl {
         }
 
         logToFile(username, "Unknown report name: " + reportName);
-        throw new ExportSalesReportException("Unknown report name: " + reportName);
+        throw new ExportSalesReportException("Неизвестное имя отчёта: " + reportName);
     }
 
     private List<Invoice> getInvoices(ReportSettings settings){
@@ -52,7 +51,7 @@ public class ReportServiceImpl {
             File result =  doReportExtraCharge(type, settings, invoices);
 
             if(result == null){
-                throw new ExportSalesReportException("Result file is null");
+                throw new ExportSalesReportException("Не удалось сгенерировать результирующий файл Excel.");
             }
 
             logToFile(settings.getUsername(),
@@ -99,5 +98,4 @@ public class ReportServiceImpl {
         ReportGenerator generator = new ExtraChargeReportGenerator(type, settings, invoices);
         return generator.doReport();
     }
-
 }

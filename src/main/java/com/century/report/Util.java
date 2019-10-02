@@ -104,6 +104,10 @@ public class Util {
     }
 
     public static void logToFile(String username, String message){
+        if(username == null || username.isEmpty()){
+            username = "system";
+        }
+
         try{
             String fullPath = LOG_PATH + "\\" + getLogFileName(username);
             File logFile = new File(fullPath);

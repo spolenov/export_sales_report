@@ -75,11 +75,17 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
         try (InputStream input = Thread.currentThread()
                 .getContextClassLoader()
                 .getResourceAsStream(templateFileName)) {
+
+            if(input == null){
+                logToFile(settings.getUsername(), String.format("No such file: %s", templateFileName));
+                throw new ExportSalesReportException(String.format("Не существует файл: %s", templateFileName));
+            }
+
             JasperReport report = (JasperReport) loadObject(input);
             result = fillReport(report, params, dataSource);
-        } catch (IOException ex) {
-            String msg = "Failed to fill report";
-            logToFile(msg, ex);
+        } catch (Exception ex) {
+            String msg = "Не удалось заполнить данные для отчёта";
+            logToFile(settings.getUsername(), msg, ex);
             throw new ExportSalesReportException(msg, ex);
         }
         return result;
@@ -151,27 +157,31 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
     }
 
     private Stream<ReportRow> getSortedStream(Stream<ReportRow> input){
-        Stream<ReportRow> temp = input;
+        Comparator<ReportRow> comp = (o1, o2) -> 0;
 
         for (String grouping : settings.getGroupings()) {
             if (grouping.equals(CLIENT_NAME.getName())) {
-                temp = temp.sorted(Comparator.comparing(ReportRow::getClientName,
-                        Comparator.nullsFirst(Comparator.naturalOrder())));
+                comp = comp.thenComparing(ReportRow::getClientName,
+                        Comparator.nullsFirst(Comparator.naturalOrder()));
+
             } else if (grouping.equals(INVOICE_NUMBER.getName())) {
-                temp = temp.sorted(Comparator.comparing(ReportRow::getInvoiceNumber,
-                        Comparator.nullsFirst(Comparator.naturalOrder())));
+                comp = comp.thenComparing(ReportRow::getInvoiceNumber,
+                        Comparator.nullsFirst(Comparator.naturalOrder()));
+
             } else if (grouping.equals(GOODS_GROUP2.getName())) {
-                temp = temp.sorted(Comparator.comparing(ReportRow::getGoodsGroup2,
-                        Comparator.nullsFirst(Comparator.naturalOrder())));
+                comp = comp.thenComparing(ReportRow::getGoodsGroup2,
+                        Comparator.nullsFirst(Comparator.naturalOrder()));
+
             } else if (grouping.equals(DATE_DOC.getName())) {
-                temp = temp.sorted(Comparator.comparing(ReportRow::getDateDoc,
-                        Comparator.nullsFirst(Comparator.naturalOrder())));
+                comp = comp.thenComparing(ReportRow::getDateDoc,
+                        Comparator.nullsFirst(Comparator.naturalOrder()));
+
             } else if (!grouping.equals(NULL.getName())) {
-                throw new ExportSalesReportException("Unsupported grouping: " + grouping);
+                throw new ExportSalesReportException("Группировка не поддерживается: " + grouping);
             }
-            temp = temp.sorted(Comparator.comparing(ReportRow::getRowNum));
         }
-        return temp;
+        comp = comp.thenComparing(ReportRow::getRowNum);
+        return input.sorted(comp);
     }
 
     private boolean isShortReport(){
@@ -179,11 +189,14 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
     }
 
     private List<ReportRow> getReportRows(){
-        return data.stream().flatMap(
-                d -> getSortedStream(d.getReportRows()
+        List<ReportRow> result = getSortedStream(data.stream().flatMap(
+                d -> d.getReportRows()
                         .stream()
                         .peek(this::calcFields)))
                 .collect(Collectors.toList());
+
+        new ProfitabilityCalculator(settings).setProfitabilityByGroups(result);
+        return result;
     }
 
     private List<Map<String, ?>> prepareFields() {
@@ -214,6 +227,12 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
             field.put("profitability", inv.getProfitability());
             field.put("marginWithoutVAT", inv.getMarginWithoutVAT());
             field.put("profitabilityWithoutVAT", inv.getProfitabilityWithoutVAT());
+
+            field.put("profitabilityByGroup1", inv.getProfitabilityByGroup1());
+            field.put("profitabilityWithoutVATByGroup1", inv.getProfitabilityWithoutVATByGroup1());
+
+            field.put("profitabilityByGroup2", inv.getProfitabilityByGroup2());
+            field.put("profitabilityWithoutVATByGroup2", inv.getProfitabilityWithoutVATByGroup2());
         }
         return ret;
     }

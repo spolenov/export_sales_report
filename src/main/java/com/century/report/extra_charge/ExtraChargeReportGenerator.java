@@ -15,7 +15,6 @@ import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
@@ -25,7 +24,6 @@ import java.util.stream.Stream;
 
 import static com.century.report.Util.*;
 import static com.century.report.extra_charge.Grouping.*;
-import static java.math.BigDecimal.ONE;
 import static java.math.BigDecimal.ZERO;
 import static java.math.RoundingMode.HALF_UP;
 import static net.sf.jasperreports.engine.JasperFillManager.fillReport;

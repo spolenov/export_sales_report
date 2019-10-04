@@ -5,6 +5,6 @@
   "programName": "Экспорт_Продажи",
   "startDate": "1569369600000",
   "endDate": "1569456000000",
-  "groupings": ["goodsGroup2"],
+  "groupings": ["clientName", "goodsGroup2"],
   "decimalPlaces": 5
 }

@@ -90,8 +90,8 @@
 	<variable name="profitabilityWithoutVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Average">
 		<variableExpression><![CDATA[$F{profitabilityWithoutVATByGroup2}]]></variableExpression>
 	</variable>
-	<variable name="extraCharge1CAvgSummary" class="java.math.BigDecimal" incrementType="Group" incrementGroup="grouping2" calculation="Average">
-		<variableExpression><![CDATA[$V{extraCharge1CAvg}]]></variableExpression>
+	<variable name="extraCharge1CAvgSummary" class="java.math.BigDecimal" incrementType="Group" incrementGroup="grouping1" calculation="Average">
+		<variableExpression><![CDATA[$V{extraCharge1CAvg_1}]]></variableExpression>
 	</variable>
 	<variable name="qtySummary" class="java.math.BigDecimal" resetType="None">
 		<variableExpression><![CDATA[$V{qtyTotal}]]></variableExpression>
@@ -99,8 +99,8 @@
 	<variable name="qtyTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Sum">
 		<variableExpression><![CDATA[$F{qty}]]></variableExpression>
 	</variable>
-	<variable name="extraChargeExportAvgSummary" class="java.math.BigDecimal" incrementType="Group" incrementGroup="grouping2" calculation="Average">
-		<variableExpression><![CDATA[$V{extraChargeExportAvg}]]></variableExpression>
+	<variable name="extraChargeExportAvgSummary" class="java.math.BigDecimal" incrementType="Group" incrementGroup="grouping1" calculation="Average">
+		<variableExpression><![CDATA[$V{extraChargeExportAvg_1}]]></variableExpression>
 	</variable>
 	<variable name="rowSumSummary" class="java.math.BigDecimal" resetType="None" calculation="Sum">
 		<variableExpression><![CDATA[$V{rowSumTotal}]]></variableExpression>
@@ -125,6 +125,12 @@
 	</variable>
 	<variable name="invoiceSum" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Sum">
 		<variableExpression><![CDATA[$F{rowSum}]]></variableExpression>
+	</variable>
+	<variable name="extraCharge1CAvg_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping1" incrementType="Group" incrementGroup="grouping2" calculation="Average">
+		<variableExpression><![CDATA[$V{extraCharge1CAvg}]]></variableExpression>
+	</variable>
+	<variable name="extraChargeExportAvg_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping1" incrementType="Group" incrementGroup="grouping2" calculation="Average">
+		<variableExpression><![CDATA[$V{extraChargeExportAvg}]]></variableExpression>
 	</variable>
 	<group name="grouping1">
 		<groupExpression><![CDATA[$P{grouping1}.equals("clientName")? $F{clientName}: 
@@ -1032,12 +1038,6 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					</textElement>
 					<textFieldExpression><![CDATA[$V{profitabilityWithoutVATTotal}]]></textFieldExpression>
 				</textField>
-				<rectangle>
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="352" height="15" uuid="ce52faae-7666-4aff-af89-8ce0f9320199"/>
-					<graphicElement>
-						<pen lineWidth="1.0"/>
-					</graphicElement>
-				</rectangle>
 				<textField>
 					<reportElement x="352" y="0" width="40" height="15" uuid="ab8b7ac2-162e-4ebe-b03c-30414f1979c5">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -1056,6 +1056,19 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 						<pen lineWidth="1.0"/>
 					</graphicElement>
 				</rectangle>
+				<staticText>
+					<reportElement x="0" y="0" width="352" height="15" uuid="18589e13-0655-4686-944b-58458debff72"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Всего:]]></text>
+				</staticText>
 			</band>
 		</groupFooter>
 	</group>
@@ -1100,7 +1113,7 @@ $P{grouping2}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 				<text><![CDATA[Период:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="732" y="-1" width="274" height="15" uuid="09782d77-b98b-48b4-999f-8f7566e390af"/>
+				<reportElement x="732" y="-1" width="275" height="15" uuid="09782d77-b98b-48b4-999f-8f7566e390af"/>
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5" lineColor="#8F8F8F"/>

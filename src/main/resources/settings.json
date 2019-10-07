@@ -3,8 +3,8 @@
   "username": "spolenov",
   "filename": "test_file_name",
   "programName": "Экспорт_Продажи",
-  "startDate": "1569369600000",
+  "startDate": "1469369600000",
   "endDate": "1569456000000",
-  "groupings": ["clientName", "goodsGroup2"],
+  "groupings": ["goodsGroup2"],
   "decimalPlaces": 5
 }

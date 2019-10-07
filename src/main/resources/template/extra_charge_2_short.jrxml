@@ -90,7 +90,7 @@
 	<variable name="profitabilityWithoutVATTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Average">
 		<variableExpression><![CDATA[$F{profitabilityWithoutVATByGroup2}]]></variableExpression>
 	</variable>
-	<variable name="extraCharge1CAvgSummary" class="java.math.BigDecimal" incrementType="Group" incrementGroup="grouping2" calculation="Average">
+	<variable name="extraCharge1CAvgSummary" class="java.math.BigDecimal" incrementType="Group" incrementGroup="grouping1" calculation="Average">
 		<variableExpression><![CDATA[$V{extraCharge1CAvg_1}]]></variableExpression>
 	</variable>
 	<variable name="qtySummary" class="java.math.BigDecimal" resetType="None">
@@ -99,7 +99,7 @@
 	<variable name="qtyTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping2" calculation="Sum">
 		<variableExpression><![CDATA[$F{qty}]]></variableExpression>
 	</variable>
-	<variable name="extraChargeExportAvgSummary" class="java.math.BigDecimal" incrementType="Group" incrementGroup="grouping2" calculation="Average">
+	<variable name="extraChargeExportAvgSummary" class="java.math.BigDecimal" incrementType="Group" incrementGroup="grouping1" calculation="Average">
 		<variableExpression><![CDATA[$V{extraChargeExportAvg_1}]]></variableExpression>
 	</variable>
 	<variable name="rowSumSummary" class="java.math.BigDecimal" resetType="None" calculation="Sum">
@@ -148,6 +148,21 @@
 	<variable name="extraChargeExportAvg_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping1" incrementType="Group" incrementGroup="grouping2" calculation="Average">
 		<variableExpression><![CDATA[$V{extraChargeExportAvg}]]></variableExpression>
 	</variable>
+	<variable name="invoiceSum_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping1" calculation="Sum">
+		<variableExpression><![CDATA[$F{rowSum}]]></variableExpression>
+	</variable>
+	<variable name="incomeSumWithVATTotal_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping1" calculation="Sum">
+		<variableExpression><![CDATA[$V{incomeSumWithVAT}]]></variableExpression>
+	</variable>
+	<variable name="incomeSumWithoutVATTotal_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping1" calculation="Sum">
+		<variableExpression><![CDATA[$V{incomeSumWithoutVAT}.setScale($P{decimalPlaces}, RoundingMode.HALF_UP)]]></variableExpression>
+	</variable>
+	<variable name="marginWithVATTotal_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping1" calculation="Sum">
+		<variableExpression><![CDATA[$F{margin}]]></variableExpression>
+	</variable>
+	<variable name="marginWithoutVATTotal_1" class="java.math.BigDecimal" resetType="Group" resetGroup="grouping1" calculation="Sum">
+		<variableExpression><![CDATA[$F{marginWithoutVAT}]]></variableExpression>
+	</variable>
 	<group name="grouping1">
 		<groupExpression><![CDATA[$P{grouping1}.equals("clientName")? $F{clientName}: 
 $P{grouping1}.equals("invoiceNumber")? $F{invoiceNumber}:
@@ -172,6 +187,10 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<reportElement x="352" y="0" width="40" height="18" uuid="aeb07c62-5dce-4c6a-96e0-ad2e948756f2"/>
 					<box padding="0">
 						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="8" isBold="true"/>
@@ -182,10 +201,10 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<reportElement x="854" y="0" width="48" height="18" uuid="b39551bf-5f7b-47b0-890f-4d8fcf6552e3"/>
 					<box padding="0">
 						<pen lineWidth="1.0"/>
-						<topPen lineWidth="1.0"/>
-						<leftPen lineWidth="1.0"/>
-						<bottomPen lineWidth="1.0"/>
-						<rightPen lineWidth="1.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="8" isBold="true"/>
@@ -196,10 +215,10 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					<reportElement x="958" y="0" width="49" height="18" uuid="0cb2dcf8-7234-45a4-b6ea-d216426015d9"/>
 					<box padding="0">
 						<pen lineWidth="1.0"/>
-						<topPen lineWidth="1.0"/>
-						<leftPen lineWidth="1.0"/>
-						<bottomPen lineWidth="1.0"/>
-						<rightPen lineWidth="1.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="8" isBold="true"/>
@@ -223,6 +242,10 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					</reportElement>
 					<box padding="0">
 						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="8" isBold="true"/>
@@ -235,11 +258,93 @@ $P{grouping1}.equals("goodsGroup2")? $F{goodsGroup2}: ""]]></textFieldExpression
 					</reportElement>
 					<box padding="0">
 						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="8" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{extraChargeExportAvg_1}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="grouping1" pattern="#,##0.00">
+					<reportElement x="598" y="0" width="70" height="18" uuid="429f8426-fb4f-4709-af4e-0befe0f2bda2">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box padding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{invoiceSum_1}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="grouping1" pattern="#,##0.00">
+					<reportElement x="668" y="0" width="64" height="18" uuid="ba69e824-2faf-4711-8a40-5623067e6d14">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box padding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{incomeSumWithVATTotal_1}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="grouping1" pattern="#,##0.00">
+					<reportElement x="732" y="0" width="63" height="18" uuid="55e89dbf-cb8d-41e3-87b4-8d1646b31a7d">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box padding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{incomeSumWithoutVATTotal_1}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="grouping1" pattern="#,##0.00">
+					<reportElement x="795" y="0" width="59" height="18" uuid="9d700f82-a7fc-4a8c-8b1f-633e67b410e1">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box padding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{marginWithVATTotal_1}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="grouping1" pattern="#,##0.00">
+					<reportElement x="902" y="0" width="56" height="18" uuid="26a0508b-50cc-4b34-a188-e82038673958"/>
+					<box padding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{marginWithoutVATTotal_1}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>

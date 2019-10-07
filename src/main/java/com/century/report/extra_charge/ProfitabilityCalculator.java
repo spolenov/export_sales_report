@@ -20,13 +20,17 @@ class ProfitabilityCalculator {
     ProfitabilityCalculator(ReportSettings settings){
         this.settings = settings;
     }
-
+    
+    private int getDecimalPlaces(){
+        return settings.getDecimalPlaces() + 2;
+    }
+    
     private void putToProfitabilityMap(Map<String, BigDecimal> map, String group, BigDecimal invoiceSumInGroup, BigDecimal marginInGroup){
         if(invoiceSumInGroup.equals(ZERO)){
             return;
         }
         map.put(group, marginInGroup.divide(
-                invoiceSumInGroup, settings.getDecimalPlaces(), HALF_UP));
+                invoiceSumInGroup, this.getDecimalPlaces(), HALF_UP));
     }
 
     private void setInvoiceNumProfitability(List<ReportRow> rows, int groupingOrder){

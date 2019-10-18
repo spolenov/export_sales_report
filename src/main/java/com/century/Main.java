@@ -1,16 +1,20 @@
 package com.century;
 
-import com.century.report.ReportServiceImpl;
 import lombok.extern.slf4j.Slf4j;
-
-import static com.century.report.ReportName.EXTRA_CHARGE;
-import static com.century.report.ReportType.EXCEL;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.PropertySource;
 
 @Slf4j
-public class Main {
+@SpringBootApplication
+@PropertySource({"classpath:common.properties", "classpath:extra_charge/extra_charge.properties"})
+@ComponentScan(basePackages={"com.century.web", "com.century.report"})
+public class Main extends SpringBootServletInitializer {
     public static void main(String[] args) {
         try {
-            new ReportServiceImpl().doReport(EXTRA_CHARGE, EXCEL);
+            SpringApplication.run(Main.class, args);
         } catch (Exception e) {
             log.error("Error in main:", e);
         }

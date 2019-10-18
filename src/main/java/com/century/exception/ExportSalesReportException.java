@@ -1,6 +1,6 @@
 package com.century.exception;
 
-import lombok.Getter;
+        import lombok.Getter;
 
 public class ExportSalesReportException extends RuntimeException{
     @Getter
@@ -18,6 +18,6 @@ public class ExportSalesReportException extends RuntimeException{
 
     public ExportSalesReportException(String message, Exception e){
         super(message, e);
-        this.message = message;
+        this.message = message + ": " + e.getMessage();
     }
 }

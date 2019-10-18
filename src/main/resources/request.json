@@ -1,0 +1,2179 @@
+{
+  "settings": {
+    "detailed": "false",
+    "username": "spolenov",
+    "programName": "Экспорт_Продажи",
+    "startDate": "1469369600000",
+    "endDate": "1569456000000",
+    "groupings": ["goodsGroup2"],
+    "decimalPlaces": 5
+  },
+  "data": [{
+    "dateDoc": 1567411335000,
+    "summa": 1441407.68,
+    "invoiceNumber": "5556",
+    "client": {
+      "id": 16800811,
+      "name": "Аван трейд ООО Донецк"
+    },
+    "rows": [{
+      "rowNum": 1,
+      "goodsId": 339971,
+      "goodsName": "шампунь НК Дегтярный 250 мл",
+      "qty": 420,
+      "incomePrice": 41.08,
+      "expenditurePrice": 37.14,
+      "rowSum": 15598.8,
+      "goodsGroup2": "Шампунь, бальзам",
+      "vat": 20
+    }, {
+      "rowNum": 2,
+      "goodsId": 339972,
+      "goodsName": "шампунь НК Дегтярный 500млДПак",
+      "qty": 120,
+      "incomePrice": 65.7,
+      "expenditurePrice": 59.4,
+      "rowSum": 7128,
+      "goodsGroup2": "Шампунь, бальзам",
+      "vat": 20
+    }, {
+      "rowNum": 3,
+      "goodsId": 339919,
+      "goodsName": "стир.порошок Обычный универс.350г",
+      "qty": 1408,
+      "incomePrice": 27.08,
+      "expenditurePrice": 24.48,
+      "rowSum": 34467.84,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 4,
+      "goodsId": 339916,
+      "goodsName": "стир.порошок Обычный д/руч.стир.350г",
+      "qty": 1408,
+      "incomePrice": 23.55,
+      "expenditurePrice": 21.28,
+      "rowSum": 29962.24,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 5,
+      "goodsId": 339930,
+      "goodsName": "стир.порошок Сарма д/руч.стирки 400г",
+      "qty": 1408,
+      "incomePrice": 33.03,
+      "expenditurePrice": 29.86,
+      "rowSum": 42042.88,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 6,
+      "goodsId": 339924,
+      "goodsName": "стир.порошок Сарма Актив ландыш 400г",
+      "qty": 1408,
+      "incomePrice": 38,
+      "expenditurePrice": 34.35,
+      "rowSum": 48364.8,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 7,
+      "goodsId": 339932,
+      "goodsName": "стир.порош.Сарма Актив гор.свеж.400г",
+      "qty": 1408,
+      "incomePrice": 38,
+      "expenditurePrice": 34.35,
+      "rowSum": 48364.8,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 8,
+      "goodsId": 339907,
+      "goodsName": "стир.порошок Ушастый нянь детск.800г",
+      "qty": 1536,
+      "incomePrice": 75.27,
+      "expenditurePrice": 68.05,
+      "rowSum": 104524.8,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 9,
+      "goodsId": 339920,
+      "goodsName": "стир.порошок Обычный универс.800г",
+      "qty": 384,
+      "incomePrice": 58.8,
+      "expenditurePrice": 53.17,
+      "rowSum": 20417.28,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 10,
+      "goodsId": 339933,
+      "goodsName": "стир.порош.Сарма Актив гор.свеж.800г",
+      "qty": 768,
+      "incomePrice": 72.17,
+      "expenditurePrice": 65.25,
+      "rowSum": 50112,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 11,
+      "goodsId": 339925,
+      "goodsName": "стир.порошок Сарма Актив ландыш 800г",
+      "qty": 768,
+      "incomePrice": 72.17,
+      "expenditurePrice": 65.25,
+      "rowSum": 50112,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 12,
+      "goodsId": 339918,
+      "goodsName": "стир.порошок Обычный универс2,4кг",
+      "qty": 48,
+      "incomePrice": 170.87,
+      "expenditurePrice": 154.5,
+      "rowSum": 7416,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 13,
+      "goodsId": 339904,
+      "goodsName": "стир.порошок Ушастый нянь детск.4,5кг",
+      "qty": 288,
+      "incomePrice": 378.84,
+      "expenditurePrice": 342.53,
+      "rowSum": 98648.64,
+      "goodsGroup2": "Стиральный порошок",
+      "vat": 20
+    }, {
+      "rowNum": 14,
+      "goodsId": 339965,
+      "goodsName": "чист. Сарма Универсал 400г",
+      "qty": 1512,
+      "incomePrice": 33.18,
+      "expenditurePrice": 30,
+      "rowSum": 45360,
+      "goodsGroup2": "Чистящее средство",
+      "vat": 20
+    }, {
+      "rowNum": 15,
+      "goodsId": 339966,
+      "goodsName": "чист Сарма Яблоко 400г",
+      "qty": 1512,
+      "incomePrice": 33.18,
+      "expenditurePrice": 30,
+      "rowSum": 45360,
+      "goodsGroup2": "Чистящее средство",
+      "vat": 20
+    }, {
+      "rowNum": 16,
+      "goodsId": 339968,
+      "goodsName": "чист. Сарма Сода-эффект 400г",
+      "qty": 1512,
+      "incomePrice": 33.18,
+      "expenditurePrice": 30,
+      "rowSum": 45360,
+      "goodsGroup2": "Чистящее средство",
+      "vat": 20
+    }, {
+      "rowNum": 17,
+      "goodsId": 339963,
+      "goodsName": "чист Сарма Свежесть 400г",
+      "qty": 1512,
+      "incomePrice": 33.18,
+      "expenditurePrice": 30,
+      "rowSum": 45360,
+      "goodsGroup2": "Чистящее средство",
+      "vat": 20
+    }, {
+      "rowNum": 18,
+      "goodsId": 339962,
+      "goodsName": "чист. Сарма Лимон 400г",
+      "qty": 1512,
+      "incomePrice": 33.18,
+      "expenditurePrice": 30,
+      "rowSum": 45360,
+      "goodsGroup2": "Чистящее средство",
+      "vat": 20
+    }, {
+      "rowNum": 19,
+      "goodsId": 339864,
+      "goodsName": "ср-во Сарма Антиржавч.д/сантех.750мл",
+      "qty": 360,
+      "incomePrice": 67.88,
+      "expenditurePrice": 61.37,
+      "rowSum": 22093.2,
+      "goodsGroup2": "Сред-ва для чистки",
+      "vat": 20
+    }, {
+      "rowNum": 20,
+      "goodsId": 339874,
+      "goodsName": "ср-во Сарма Свежесть д/сантех.750мл",
+      "qty": 360,
+      "incomePrice": 67.88,
+      "expenditurePrice": 61.37,
+      "rowSum": 22093.2,
+      "goodsGroup2": "Сред-ва для чистки",
+      "vat": 20
+    }, {
+      "rowNum": 21,
+      "goodsId": 339868,
+      "goodsName": "ср-во Сарма для сантехники 750мл",
+      "qty": 360,
+      "incomePrice": 67.88,
+      "expenditurePrice": 61.37,
+      "rowSum": 22093.2,
+      "goodsGroup2": "Сред-ва для чистки",
+      "vat": 20
+    }, {
+      "rowNum": 22,
+      "goodsId": 339879,
+      "goodsName": "ср-во Сарма чистящее д/ванной 500мл",
+      "qty": 160,
+      "incomePrice": 75.02,
+      "expenditurePrice": 67.82,
+      "rowSum": 10851.2,
+      "goodsGroup2": "Сред-ва для чистки",
+      "vat": 20
+    }, {
+      "rowNum": 23,
+      "goodsId": 339886,
+      "goodsName": "ср-во Ушастый нянь д/дет.посуды 500мл",
+      "qty": 1120,
+      "incomePrice": 57.1,
+      "expenditurePrice": 51.63,
+      "rowSum": 57825.6,
+      "goodsGroup2": "Средство для мыть посуды",
+      "vat": 20
+    }, {
+      "rowNum": 24,
+      "goodsId": 339880,
+      "goodsName": "ср-во Сарма Яблоко д/посуды 500мл",
+      "qty": 1120,
+      "incomePrice": 46.91,
+      "expenditurePrice": 42.41,
+      "rowSum": 47499.2,
+      "goodsGroup2": "Средство для мыть посуды",
+      "vat": 20
+    }, {
+      "rowNum": 25,
+      "goodsId": 339861,
+      "goodsName": "ср-во Сарма Актив д/посуды 500мл",
+      "qty": 1120,
+      "incomePrice": 46.91,
+      "expenditurePrice": 42.41,
+      "rowSum": 47499.2,
+      "goodsGroup2": "Средство для мыть посуды",
+      "vat": 20
+    }, {
+      "rowNum": 26,
+      "goodsId": 339872,
+      "goodsName": "ср-во Сарма Оригинал д/посуды 500мл",
+      "qty": 1120,
+      "incomePrice": 46.91,
+      "expenditurePrice": 42.41,
+      "rowSum": 47499.2,
+      "goodsGroup2": "Средство для мыть посуды",
+      "vat": 20
+    }, {
+      "rowNum": 27,
+      "goodsId": 339870,
+      "goodsName": "ср-во Сарма Лимон д/посуды 500мл",
+      "qty": 4480,
+      "incomePrice": 46.91,
+      "expenditurePrice": 42.41,
+      "rowSum": 189996.8,
+      "goodsGroup2": "Средство для мыть посуды",
+      "vat": 20
+    }, {
+      "rowNum": 28,
+      "goodsId": 339877,
+      "goodsName": "ср-во Сарма Сода-Эффект д/посуды500мл",
+      "qty": 1120,
+      "incomePrice": 46.91,
+      "expenditurePrice": 42.41,
+      "rowSum": 47499.2,
+      "goodsGroup2": "Средство для мыть посуды",
+      "vat": 20
+    }, {
+      "rowNum": 29,
+      "goodsId": 339873,
+      "goodsName": "ср-во Сарма Свежесть д/посуды 500мл",
+      "qty": 3360,
+      "incomePrice": 46.91,
+      "expenditurePrice": 42.41,
+      "rowSum": 142497.6,
+      "goodsGroup2": "Средство для мыть посуды",
+      "vat": 20
+    }]
+  }, {
+    "dateDoc": 1567433618000,
+    "summa": 1375390.56,
+    "invoiceNumber": "5566",
+    "client": {
+      "id": 16800811,
+      "name": "Аван трейд ООО Донецк"
+    },
+    "rows": [{
+      "rowNum": 1,
+      "goodsId": 339670,
+      "goodsName": "з/п Ушастый Нянь Первый зубик 50мл",
+      "qty": 160,
+      "incomePrice": 42.47,
+      "expenditurePrice": 38.4,
+      "rowSum": 6144,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 2,
+      "goodsId": 339636,
+      "goodsName": "з/п НЖ Кальций 50мл",
+      "qty": 2268,
+      "incomePrice": 15.78,
+      "expenditurePrice": 14.27,
+      "rowSum": 32364.36,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 3,
+      "goodsId": 339633,
+      "goodsName": "з/п НЖ Кальций 100мл",
+      "qty": 960,
+      "incomePrice": 26.33,
+      "expenditurePrice": 23.81,
+      "rowSum": 22857.6,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 4,
+      "goodsId": 339634,
+      "goodsName": "з/п НЖ Кальций 125мл",
+      "qty": 1440,
+      "incomePrice": 30.96,
+      "expenditurePrice": 27.99,
+      "rowSum": 40305.6,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 5,
+      "goodsId": 339657,
+      "goodsName": "з/п НЖ Хвойный бальзам 100мл",
+      "qty": 320,
+      "incomePrice": 35.21,
+      "expenditurePrice": 31.84,
+      "rowSum": 10188.8,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 6,
+      "goodsId": 339642,
+      "goodsName": "з/п НЖ Отбеливающая 100мл",
+      "qty": 320,
+      "incomePrice": 44.76,
+      "expenditurePrice": 40.47,
+      "rowSum": 12950.4,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 7,
+      "goodsId": 339655,
+      "goodsName": "з/п НЖ Фтор 50мл",
+      "qty": 2268,
+      "incomePrice": 15.78,
+      "expenditurePrice": 14.27,
+      "rowSum": 32364.36,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 8,
+      "goodsId": 339653,
+      "goodsName": "з/п НЖ Фтор 100мл",
+      "qty": 960,
+      "incomePrice": 26.33,
+      "expenditurePrice": 23.81,
+      "rowSum": 22857.6,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 9,
+      "goodsId": 339654,
+      "goodsName": "з/п НЖ Фтор 125мл",
+      "qty": 1440,
+      "incomePrice": 30.96,
+      "expenditurePrice": 27.99,
+      "rowSum": 40305.6,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 10,
+      "goodsId": 339652,
+      "goodsName": "з/п НЖ Тотал 12+нежное отб.100мл",
+      "qty": 120,
+      "incomePrice": 46.04,
+      "expenditurePrice": 41.62,
+      "rowSum": 4994.4,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 11,
+      "goodsId": 339623,
+      "goodsName": "з/п детская НЖ Апельсин 50мл",
+      "qty": 160,
+      "incomePrice": 28.42,
+      "expenditurePrice": 25.7,
+      "rowSum": 4112,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 12,
+      "goodsId": 339630,
+      "goodsName": "з/п НЖ Женьшень 50 мл",
+      "qty": 180,
+      "incomePrice": 18.16,
+      "expenditurePrice": 16.42,
+      "rowSum": 2955.6,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 13,
+      "goodsId": 339662,
+      "goodsName": "з/п с легким аром.мяты НЖ 100мл",
+      "qty": 96,
+      "incomePrice": 30.34,
+      "expenditurePrice": 27.43,
+      "rowSum": 2633.28,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 14,
+      "goodsId": 339665,
+      "goodsName": "з/п с сильным аром.мяты НЖ 100мл",
+      "qty": 96,
+      "incomePrice": 30.34,
+      "expenditurePrice": 27.43,
+      "rowSum": 2633.28,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 15,
+      "goodsId": 339647,
+      "goodsName": "з/п НЖ Семь трав 100мл",
+      "qty": 720,
+      "incomePrice": 35.21,
+      "expenditurePrice": 31.84,
+      "rowSum": 22924.8,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 16,
+      "goodsId": 339641,
+      "goodsName": "з/п НЖ Лечебные травы 50 мл",
+      "qty": 1080,
+      "incomePrice": 18.16,
+      "expenditurePrice": 16.42,
+      "rowSum": 17733.6,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 17,
+      "goodsId": 339649,
+      "goodsName": "з/п НЖ Сила Моря 100мл",
+      "qty": 600,
+      "incomePrice": 35.21,
+      "expenditurePrice": 31.84,
+      "rowSum": 19104,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 18,
+      "goodsId": 339640,
+      "goodsName": "з/п НЖ Ледяная мята+отбел.100мл",
+      "qty": 200,
+      "incomePrice": 44.76,
+      "expenditurePrice": 40.47,
+      "rowSum": 8094,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 19,
+      "goodsId": 339626,
+      "goodsName": "з/п ДЖемчуг Волшебные фрукты 50мл",
+      "qty": 360,
+      "incomePrice": 15.78,
+      "expenditurePrice": 14.27,
+      "rowSum": 5137.2,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 20,
+      "goodsId": 339624,
+      "goodsName": "з/п детская НЖ Клубника 50мл",
+      "qty": 256,
+      "incomePrice": 28.42,
+      "expenditurePrice": 25.7,
+      "rowSum": 6579.2,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 21,
+      "goodsId": 339660,
+      "goodsName": "з/п НЖ Юниор Яблоко и мята 50мл",
+      "qty": 216,
+      "incomePrice": 28.42,
+      "expenditurePrice": 25.7,
+      "rowSum": 5551.2,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 22,
+      "goodsId": 339631,
+      "goodsName": "з/п НЖ Зеленое яблоко+отб.100мл",
+      "qty": 200,
+      "incomePrice": 44.76,
+      "expenditurePrice": 40.47,
+      "rowSum": 8094,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 23,
+      "goodsId": 339625,
+      "goodsName": "з/п детская НЖ Малина 50мл",
+      "qty": 256,
+      "incomePrice": 28.42,
+      "expenditurePrice": 25.7,
+      "rowSum": 6579.2,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 24,
+      "goodsId": 339664,
+      "goodsName": "з/п с ромашкой НЖ 100мл",
+      "qty": 280,
+      "incomePrice": 35.21,
+      "expenditurePrice": 31.84,
+      "rowSum": 8915.2,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 25,
+      "goodsId": 339627,
+      "goodsName": "з/п Жемчуг для всей семьи 100мл",
+      "qty": 320,
+      "incomePrice": 26.33,
+      "expenditurePrice": 23.81,
+      "rowSum": 7619.2,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 26,
+      "goodsId": 339643,
+      "goodsName": "з/п НЖ Прополис 125мл",
+      "qty": 200,
+      "incomePrice": 35.61,
+      "expenditurePrice": 32.19,
+      "rowSum": 6438,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 27,
+      "goodsId": 339645,
+      "goodsName": "з/п НЖ Ромашка 50мл",
+      "qty": 252,
+      "incomePrice": 18.16,
+      "expenditurePrice": 16.42,
+      "rowSum": 4137.84,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 28,
+      "goodsId": 339644,
+      "goodsName": "з/п НЖ Ромашка 100мл",
+      "qty": 160,
+      "incomePrice": 29.64,
+      "expenditurePrice": 26.8,
+      "rowSum": 4288,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 29,
+      "goodsId": 339639,
+      "goodsName": "з/п НЖ Кора Дуба 50мл",
+      "qty": 288,
+      "incomePrice": 18.16,
+      "expenditurePrice": 16.42,
+      "rowSum": 4728.96,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 30,
+      "goodsId": 339658,
+      "goodsName": "з/п НЖ Шалфей с кальцием 50мл",
+      "qty": 288,
+      "incomePrice": 18.16,
+      "expenditurePrice": 16.42,
+      "rowSum": 4728.96,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 31,
+      "goodsId": 339669,
+      "goodsName": "з/п с шалфеем НЖ 100мл",
+      "qty": 320,
+      "incomePrice": 35.21,
+      "expenditurePrice": 31.84,
+      "rowSum": 10188.8,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 32,
+      "goodsId": 339651,
+      "goodsName": "з/п НЖ Тотал 12 Отбелив.от природы 100мл",
+      "qty": 80,
+      "incomePrice": 46.04,
+      "expenditurePrice": 41.62,
+      "rowSum": 3329.6,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 33,
+      "goodsId": 339650,
+      "goodsName": "з/п НЖ Тотал 12 Восстан.эмали 100мл",
+      "qty": 80,
+      "incomePrice": 46.04,
+      "expenditurePrice": 41.62,
+      "rowSum": 3329.6,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 34,
+      "goodsId": 339668,
+      "goodsName": "з/п с солодкой НЖ 100мл",
+      "qty": 80,
+      "incomePrice": 35.21,
+      "expenditurePrice": 31.84,
+      "rowSum": 2547.2,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 35,
+      "goodsId": 339833,
+      "goodsName": "ополаск. НЖ Тотал 12 д/п.рта 250мл",
+      "qty": 200,
+      "incomePrice": 55.47,
+      "expenditurePrice": 50.15,
+      "rowSum": 10030,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 36,
+      "goodsId": 339832,
+      "goodsName": "ополаск. НЖ с шалфеем д/п.рта 250мл",
+      "qty": 100,
+      "incomePrice": 55.47,
+      "expenditurePrice": 50.15,
+      "rowSum": 5015,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 37,
+      "goodsId": 339835,
+      "goodsName": "ополаск.НЖ с корой дуба д/п.рта 250мл",
+      "qty": 100,
+      "incomePrice": 55.47,
+      "expenditurePrice": 50.15,
+      "rowSum": 5015,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 38,
+      "goodsId": 339830,
+      "goodsName": "ополаск. НЖ с ромашкой д/п.рта 250мл",
+      "qty": 100,
+      "incomePrice": 55.47,
+      "expenditurePrice": 50.15,
+      "rowSum": 5015,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 39,
+      "goodsId": 339834,
+      "goodsName": "ополаск.детск.НЖ Клубника д/п.рта 250мл",
+      "qty": 20,
+      "incomePrice": 55.47,
+      "expenditurePrice": 50.15,
+      "rowSum": 1003,
+      "goodsGroup2": "З/Паста, Ополаскиватель",
+      "vat": 20
+    }, {
+      "rowNum": 40,
+      "goodsId": 339700,
+      "goodsName": "крем д/лица НК Облепиховый 40мл",
+      "qty": 36,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 1022.04,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 41,
+      "goodsId": 339733,
+      "goodsName": "крем НК Детский 40мл",
+      "qty": 432,
+      "incomePrice": 28.1,
+      "expenditurePrice": 25.4,
+      "rowSum": 10972.8,
+      "goodsGroup2": "Крем детский",
+      "vat": 20
+    }, {
+      "rowNum": 42,
+      "goodsId": 339699,
+      "goodsName": "крем д/лица НК Морошка 40мл",
+      "qty": 108,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 3066.12,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 43,
+      "goodsId": 339726,
+      "goodsName": "крем д/рук НК Лимонно-глицерин.50мл",
+      "qty": 108,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 3066.12,
+      "goodsGroup2": "Крем для рук",
+      "vat": 20
+    }, {
+      "rowNum": 44,
+      "goodsId": 339740,
+      "goodsName": "крем Тип-Топ питательный 40 мл",
+      "qty": 108,
+      "incomePrice": 28.1,
+      "expenditurePrice": 25.4,
+      "rowSum": 2743.2,
+      "goodsGroup2": "Крем детский",
+      "vat": 20
+    }, {
+      "rowNum": 45,
+      "goodsId": 339741,
+      "goodsName": "крем Тип-Топ увлажняющий 40 мл",
+      "qty": 252,
+      "incomePrice": 28.1,
+      "expenditurePrice": 25.4,
+      "rowSum": 6400.8,
+      "goodsGroup2": "Крем детский",
+      "vat": 20
+    }, {
+      "rowNum": 46,
+      "goodsId": 339742,
+      "goodsName": "крем Тип-топ успокаивающий 40мл",
+      "qty": 108,
+      "incomePrice": 28.1,
+      "expenditurePrice": 25.4,
+      "rowSum": 2743.2,
+      "goodsGroup2": "Крем детский",
+      "vat": 20
+    }, {
+      "rowNum": 47,
+      "goodsId": 339688,
+      "goodsName": "крем вокруг глаз НК Женьшеневый 25мл",
+      "qty": 36,
+      "incomePrice": 40.83,
+      "expenditurePrice": 36.91,
+      "rowSum": 1328.76,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 48,
+      "goodsId": 339692,
+      "goodsName": "крем д/лица НК Женьшеневый 40мл",
+      "qty": 72,
+      "incomePrice": 40.83,
+      "expenditurePrice": 36.91,
+      "rowSum": 2657.52,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 49,
+      "goodsId": 339734,
+      "goodsName": "крем НК Детский защитный 2в1 40мл",
+      "qty": 108,
+      "incomePrice": 28.1,
+      "expenditurePrice": 25.4,
+      "rowSum": 2743.2,
+      "goodsGroup2": "Крем детский",
+      "vat": 20
+    }, {
+      "rowNum": 50,
+      "goodsId": 339725,
+      "goodsName": "крем д/рук Невский Велюр 50мл",
+      "qty": 144,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 4088.16,
+      "goodsGroup2": "Крем для рук",
+      "vat": 20
+    }, {
+      "rowNum": 51,
+      "goodsId": 339697,
+      "goodsName": "крем д/лица НК Морковный 40мл",
+      "qty": 72,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 2044.08,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 52,
+      "goodsId": 339703,
+      "goodsName": "крем д/лица НК Персиковый 40мл",
+      "qty": 36,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 1022.04,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 53,
+      "goodsId": 339701,
+      "goodsName": "крем д/лица НК Огуречный 40мл",
+      "qty": 108,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 3066.12,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 54,
+      "goodsId": 339745,
+      "goodsName": "крем Ушастый нянь увлажняющий100мл",
+      "qty": 130,
+      "incomePrice": 80.33,
+      "expenditurePrice": 72.63,
+      "rowSum": 9441.9,
+      "goodsGroup2": "Крем детский",
+      "vat": 20
+    }, {
+      "rowNum": 55,
+      "goodsId": 339728,
+      "goodsName": "крем д/рук НК Оливково-глицерин.50мл",
+      "qty": 108,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 3066.12,
+      "goodsGroup2": "Крем для рук",
+      "vat": 20
+    }, {
+      "rowNum": 56,
+      "goodsId": 339702,
+      "goodsName": "крем д/лица НК Оливковый 40мл",
+      "qty": 72,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 2044.08,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 57,
+      "goodsId": 339694,
+      "goodsName": "крем д/лица НК Календула 40мл",
+      "qty": 72,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 2044.08,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 58,
+      "goodsId": 339735,
+      "goodsName": "крем НК Детский легкий увлажн.40мл",
+      "qty": 216,
+      "incomePrice": 28.1,
+      "expenditurePrice": 25.4,
+      "rowSum": 5486.4,
+      "goodsGroup2": "Крем детский",
+      "vat": 20
+    }, {
+      "rowNum": 59,
+      "goodsId": 339693,
+      "goodsName": "крем д/лица НК Зеленый чай 40мл",
+      "qty": 72,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 2044.08,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 60,
+      "goodsId": 339736,
+      "goodsName": "крем НК Детский от ушибов/ссадин 40мл",
+      "qty": 108,
+      "incomePrice": 28.1,
+      "expenditurePrice": 25.4,
+      "rowSum": 2743.2,
+      "goodsGroup2": "Крем детский",
+      "vat": 20
+    }, {
+      "rowNum": 61,
+      "goodsId": 339689,
+      "goodsName": "крем д/лица НК Авокадо 40мл",
+      "qty": 36,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 1022.04,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 62,
+      "goodsId": 339616,
+      "goodsName": "гель д/лица НК Алоэ 40мл",
+      "qty": 72,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 2044.08,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 63,
+      "goodsId": 339729,
+      "goodsName": "крем д/рук НК Ромашково-глицерин50мл",
+      "qty": 108,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 3066.12,
+      "goodsGroup2": "Крем для рук",
+      "vat": 20
+    }, {
+      "rowNum": 64,
+      "goodsId": 339705,
+      "goodsName": "крем д/лица НК Спермацетовый 40мл",
+      "qty": 216,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 6132.24,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 65,
+      "goodsId": 339690,
+      "goodsName": "крем д/лица НК Виноград 40мл",
+      "qty": 72,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 2044.08,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 66,
+      "goodsId": 339708,
+      "goodsName": "крем д/лица НК Шиповник 40мл",
+      "qty": 36,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 1022.04,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 67,
+      "goodsId": 339696,
+      "goodsName": "крем д/лица НК Миндальный 40мл",
+      "qty": 72,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 2044.08,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 68,
+      "goodsId": 339695,
+      "goodsName": "крем д/лица НК Ланолиновый 40мл",
+      "qty": 144,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 4088.16,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 69,
+      "goodsId": 339743,
+      "goodsName": "крем Ушастый нянь 100мл",
+      "qty": 78,
+      "incomePrice": 80.33,
+      "expenditurePrice": 72.63,
+      "rowSum": 5665.14,
+      "goodsGroup2": "Крем детский",
+      "vat": 20
+    }, {
+      "rowNum": 70,
+      "goodsId": 339614,
+      "goodsName": "вазелин косметический НК 40мл ",
+      "qty": 144,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 4088.16,
+      "goodsGroup2": "Крем для рук",
+      "vat": 20
+    }, {
+      "rowNum": 71,
+      "goodsId": 339813,
+      "goodsName": "мыло густое МЧистер д/рук 200мл",
+      "qty": 42,
+      "incomePrice": 56.96,
+      "expenditurePrice": 51.49,
+      "rowSum": 2162.58,
+      "goodsGroup2": "Крем-мыло",
+      "vat": 20
+    }, {
+      "rowNum": 72,
+      "goodsId": 339706,
+      "goodsName": "крем д/лица НК Хлопковый 40мл",
+      "qty": 72,
+      "incomePrice": 31.41,
+      "expenditurePrice": 28.39,
+      "rowSum": 2044.08,
+      "goodsGroup2": "Крем, гель для лица и кожи вокруг глаз",
+      "vat": 20
+    }, {
+      "rowNum": 73,
+      "goodsId": 339753,
+      "goodsName": "крем-мыло НК Натуральное/шелк 90г",
+      "qty": 576,
+      "incomePrice": 13.6,
+      "expenditurePrice": 12.3,
+      "rowSum": 7084.8,
+      "goodsGroup2": "Крем-мыло",
+      "vat": 20
+    }, {
+      "rowNum": 74,
+      "goodsId": 339783,
+      "goodsName": "м/т НК Молочное 90г",
+      "qty": 360,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 4226.4,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 75,
+      "goodsId": 339778,
+      "goodsName": "м/т НК Детское 90г",
+      "qty": 3024,
+      "incomePrice": 12.36,
+      "expenditurePrice": 11.18,
+      "rowSum": 33808.32,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 76,
+      "goodsId": 339785,
+      "goodsName": "м/т НК Овсяное 90г",
+      "qty": 144,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 1690.56,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 77,
+      "goodsId": 339766,
+      "goodsName": "м/т Дивный сад Лимон 90г",
+      "qty": 504,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 5916.96,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 78,
+      "goodsId": 339768,
+      "goodsName": "м/т Дивный сад Персик 90г",
+      "qty": 360,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 4226.4,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 79,
+      "goodsId": 339801,
+      "goodsName": "м/т Цветы любви Ландыш 90г",
+      "qty": 72,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 845.28,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 80,
+      "goodsId": 339763,
+      "goodsName": "м/т Дивный сад Зеленое яблоко 90г",
+      "qty": 504,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 5916.96,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 81,
+      "goodsId": 339761,
+      "goodsName": "м/т Вишневый сад 90г",
+      "qty": 360,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 4226.4,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 82,
+      "goodsId": 339792,
+      "goodsName": "м/т Новое Глицериновое 90г",
+      "qty": 288,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 3381.12,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 83,
+      "goodsId": 339764,
+      "goodsName": "м/т Дивный сад Клубника 90г",
+      "qty": 504,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 5916.96,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 84,
+      "goodsId": 339769,
+      "goodsName": "м/т Липовый цвет 90г",
+      "qty": 720,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 8452.8,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 85,
+      "goodsId": 339795,
+      "goodsName": "м/т с ромашкой НК Детское 90г",
+      "qty": 720,
+      "incomePrice": 13.6,
+      "expenditurePrice": 12.3,
+      "rowSum": 8856,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 86,
+      "goodsId": 339799,
+      "goodsName": "м/т с чистотелом НК Детское 90г",
+      "qty": 720,
+      "incomePrice": 13.6,
+      "expenditurePrice": 12.3,
+      "rowSum": 8856,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 87,
+      "goodsId": 339757,
+      "goodsName": "крем-мыло Ушастый нянь с ромашкой90г",
+      "qty": 6048,
+      "incomePrice": 16.08,
+      "expenditurePrice": 14.54,
+      "rowSum": 87937.92,
+      "goodsGroup2": "Крем-мыло",
+      "vat": 20
+    }, {
+      "rowNum": 88,
+      "goodsId": 339786,
+      "goodsName": "м/т НК Оливковое 90г",
+      "qty": 144,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 1690.56,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 89,
+      "goodsId": 339784,
+      "goodsName": "м/т НК Натуральное антибакт. 90г ",
+      "qty": 432,
+      "incomePrice": 13.6,
+      "expenditurePrice": 12.3,
+      "rowSum": 5313.6,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 90,
+      "goodsId": 339804,
+      "goodsName": "м/т Яблоневый сад 90г",
+      "qty": 288,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 3381.12,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 91,
+      "goodsId": 339797,
+      "goodsName": "м/т с чередой НК Детское 90г",
+      "qty": 504,
+      "incomePrice": 13.6,
+      "expenditurePrice": 12.3,
+      "rowSum": 6199.2,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 92,
+      "goodsId": 339762,
+      "goodsName": "м/т Детское с антибакт.эффектом 90г",
+      "qty": 720,
+      "incomePrice": 13.6,
+      "expenditurePrice": 12.3,
+      "rowSum": 8856,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 93,
+      "goodsId": 339793,
+      "goodsName": "м/т Новое Ланолиновое 90г",
+      "qty": 288,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 3381.12,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 94,
+      "goodsId": 339788,
+      "goodsName": "м/т НК Серное 90г",
+      "qty": 288,
+      "incomePrice": 18,
+      "expenditurePrice": 16.28,
+      "rowSum": 4688.64,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 95,
+      "goodsId": 339800,
+      "goodsName": "м/т Цветы любви Лаванда 90г",
+      "qty": 72,
+      "incomePrice": 12.99,
+      "expenditurePrice": 11.74,
+      "rowSum": 845.28,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 96,
+      "goodsId": 339945,
+      "goodsName": "х/м 72 % универсальное 180г ",
+      "qty": 972,
+      "incomePrice": 20.28,
+      "expenditurePrice": 18.34,
+      "rowSum": 17826.48,
+      "goodsGroup2": "Хоз.мыло",
+      "vat": 20
+    }, {
+      "rowNum": 97,
+      "goodsId": 339956,
+      "goodsName": "х/м Ушастый нянь против пятен 180г",
+      "qty": 1944,
+      "incomePrice": 25.86,
+      "expenditurePrice": 23.38,
+      "rowSum": 45450.72,
+      "goodsGroup2": "Хоз.мыло",
+      "vat": 20
+    }, {
+      "rowNum": 98,
+      "goodsId": 339955,
+      "goodsName": "х/м Ушастый нянь отбеливающее 180г",
+      "qty": 1944,
+      "incomePrice": 25.86,
+      "expenditurePrice": 23.38,
+      "rowSum": 45450.72,
+      "goodsGroup2": "Хоз.мыло",
+      "vat": 20
+    }, {
+      "rowNum": 99,
+      "goodsId": 339774,
+      "goodsName": "м/т НК Дегтярное 140г",
+      "qty": 7200,
+      "incomePrice": 20.12,
+      "expenditurePrice": 18.18,
+      "rowSum": 130896,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 100,
+      "goodsId": 339781,
+      "goodsName": "м/т НК Лимонное 140г",
+      "qty": 480,
+      "incomePrice": 16.77,
+      "expenditurePrice": 15.15,
+      "rowSum": 7272,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 101,
+      "goodsId": 339771,
+      "goodsName": "м/т НК Банное 4x100г",
+      "qty": 108,
+      "incomePrice": 47.93,
+      "expenditurePrice": 43.34,
+      "rowSum": 4680.72,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 102,
+      "goodsId": 339777,
+      "goodsName": "м/т НК Детское 4x100г",
+      "qty": 882,
+      "incomePrice": 50.33,
+      "expenditurePrice": 45.51,
+      "rowSum": 40139.82,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 103,
+      "goodsId": 339755,
+      "goodsName": "крем-мыло Ушастый нянь с алоэ 4x100г",
+      "qty": 450,
+      "incomePrice": 64.71,
+      "expenditurePrice": 58.5,
+      "rowSum": 26325,
+      "goodsGroup2": "Крем-мыло",
+      "vat": 20
+    }, {
+      "rowNum": 104,
+      "goodsId": 339796,
+      "goodsName": "м/т с чередой НК Детское 4х100г",
+      "qty": 126,
+      "incomePrice": 55.12,
+      "expenditurePrice": 49.84,
+      "rowSum": 6279.84,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 105,
+      "goodsId": 339798,
+      "goodsName": "м/т с чистотелом НК Детское 4х100г",
+      "qty": 108,
+      "incomePrice": 55.12,
+      "expenditurePrice": 49.84,
+      "rowSum": 5382.72,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 106,
+      "goodsId": 339794,
+      "goodsName": "м/т с ромашкой НК Детское 4х100г",
+      "qty": 108,
+      "incomePrice": 55.12,
+      "expenditurePrice": 49.84,
+      "rowSum": 5382.72,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 107,
+      "goodsId": 339775,
+      "goodsName": "м/т НК Дегтярное 4x100г",
+      "qty": 108,
+      "incomePrice": 57.51,
+      "expenditurePrice": 51.99,
+      "rowSum": 5614.92,
+      "goodsGroup2": "Т.Мыло",
+      "vat": 20
+    }, {
+      "rowNum": 108,
+      "goodsId": 339754,
+      "goodsName": "крем-мыло Уш.нянь с ромашкой 4x100г",
+      "qty": 900,
+      "incomePrice": 64.71,
+      "expenditurePrice": 58.5,
+      "rowSum": 52650,
+      "goodsGroup2": "Крем-мыло",
+      "vat": 20
+    }, {
+      "rowNum": 109,
+      "goodsId": 339949,
+      "goodsName": "х/м Сарма против пятен 140г",
+      "qty": 4800,
+      "incomePrice": 22.14,
+      "expenditurePrice": 20.02,
+      "rowSum": 96096,
+      "goodsGroup2": "Хоз.мыло",
+      "vat": 20
+    }, {
+      "rowNum": 110,
+      "goodsId": 339948,
+      "goodsName": "х/м Сарма отбеливающее 140г",
+      "qty": 4800,
+      "incomePrice": 22.14,
+      "expenditurePrice": 20.02,
+      "rowSum": 96096,
+      "goodsGroup2": "Хоз.мыло",
+      "vat": 20
+    }, {
+      "rowNum": 111,
+      "goodsId": 339947,
+      "goodsName": "х/м Сарма антибактериальное 140г",
+      "qty": 1200,
+      "incomePrice": 22.14,
+      "expenditurePrice": 20.02,
+      "rowSum": 24024,
+      "goodsGroup2": "Хоз.мыло",
+      "vat": 20
+    }, {
+      "rowNum": 112,
+      "goodsId": 339809,
+      "goodsName": "масло Ушастый нянь косметич. 200мл",
+      "qty": 48,
+      "incomePrice": 77.62,
+      "expenditurePrice": 70.18,
+      "rowSum": 3368.64,
+      "goodsGroup2": "Маска и масло для волос",
+      "vat": 20
+    }, {
+      "rowNum": 113,
+      "goodsId": 339810,
+      "goodsName": "масло Ушастый нянь массажн. 200мл",
+      "qty": 48,
+      "incomePrice": 85.38,
+      "expenditurePrice": 77.2,
+      "rowSum": 3705.6,
+      "goodsGroup2": "Маска и масло для волос",
+      "vat": 20
+    }]
+  }, {
+    "dateDoc": 1567422053000,
+    "summa": 1103285.63,
+    "invoiceNumber": "5560",
+    "client": {
+      "id": 16800776,
+      "name": "ТОРГОВЫЙ ДОМ ООО (б. Виола)"
+    },
+    "rows": [{
+      "rowNum": 1,
+      "goodsId": 268368,
+      "goodsName": "\"Фрекен БОК\" пакет LD д/мусора 70*110/10шт/120л син",
+      "qty": 60,
+      "incomePrice": 64.48,
+      "expenditurePrice": 60.06,
+      "rowSum": 3603.6,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 2,
+      "goodsId": 309330,
+      "goodsName": "\"Фрекен БОК\" Пакет для мусора LD п/э синий 160 л/10 шт (15 шт/ящ)",
+      "qty": 30,
+      "incomePrice": 99.62,
+      "expenditurePrice": 92.8,
+      "rowSum": 2784,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 3,
+      "goodsId": 309340,
+      "goodsName": "\"Фрекен БОК\" Пакет для мусора 55*70 синий 45л/20шт  ",
+      "qty": 240,
+      "incomePrice": 22.07,
+      "expenditurePrice": 20.55,
+      "rowSum": 4932,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 4,
+      "goodsId": 324099,
+      "goodsName": "Фрекен Бок Пакет для мусора п/э 50*60 синий НD 35л 100шт (20шт/ящ)",
+      "qty": 120,
+      "incomePrice": 75.71,
+      "expenditurePrice": 70.53,
+      "rowSum": 8463.6,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 5,
+      "goodsId": 309343,
+      "goodsName": "\"Фрекен БОК\" Пакет д/мусора 50*60/30шт/35л зеленый ",
+      "qty": 280,
+      "incomePrice": 24.01,
+      "expenditurePrice": 22.36,
+      "rowSum": 6260.8,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 6,
+      "goodsId": 309345,
+      "goodsName": "\"Фрекен БОК\" Пакет д/мусора 50*60/30шт/35л черный",
+      "qty": 140,
+      "incomePrice": 24.01,
+      "expenditurePrice": 22.36,
+      "rowSum": 3130.4,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 7,
+      "goodsId": 268380,
+      "goodsName": "\"Фрекен БОК\" Пакет д/мусора 60*80/20шт/60л  черный",
+      "qty": 100,
+      "incomePrice": 35.38,
+      "expenditurePrice": 32.95,
+      "rowSum": 3295,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 8,
+      "goodsId": 268384,
+      "goodsName": "\"Фрекен БОК\" Пакет д/мусора 60*80/20шт/60л  синий",
+      "qty": 100,
+      "incomePrice": 35.38,
+      "expenditurePrice": 32.95,
+      "rowSum": 3295,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 9,
+      "goodsId": 329912,
+      "goodsName": "ФБ Пакеты для мусора с ручками 35л/30шт, синий (25шт/ящ)",
+      "qty": 25,
+      "incomePrice": 51.85,
+      "expenditurePrice": 48.31,
+      "rowSum": 1207.75,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 10,
+      "goodsId": 329913,
+      "goodsName": "ФБ Пакеты для мусора с ручками 60л/20шт, синий (25шт/ящ)",
+      "qty": 50,
+      "incomePrice": 69.15,
+      "expenditurePrice": 64.42,
+      "rowSum": 3221,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 11,
+      "goodsId": 309424,
+      "goodsName": "\"Фрекен БОК\" Губка Комфорт 5шт",
+      "qty": 490,
+      "incomePrice": 17.65,
+      "expenditurePrice": 16.44,
+      "rowSum": 8055.6,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 12,
+      "goodsId": 314346,
+      "goodsName": "Фрекен БОК  кухонные губки  профилированые Симфония 5 шт.",
+      "qty": 336,
+      "incomePrice": 26.2,
+      "expenditurePrice": 24.4,
+      "rowSum": 8198.4,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 13,
+      "goodsId": 309430,
+      "goodsName": "\"Фрекен БОК\" Губка кухонная MAX 3 шт",
+      "qty": 94,
+      "incomePrice": 25.26,
+      "expenditurePrice": 23.52,
+      "rowSum": 2210.88,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 14,
+      "goodsId": 309432,
+      "goodsName": "\"Фрекен БОК\" Губка для ванной комнаты профилированная - 1 шт.",
+      "qty": 180,
+      "incomePrice": 15.6,
+      "expenditurePrice": 14.53,
+      "rowSum": 2615.4,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 15,
+      "goodsId": 309431,
+      "goodsName": "\"Фрекен БОК\" Скребок кухонный 1шт ",
+      "qty": 288,
+      "incomePrice": 19.27,
+      "expenditurePrice": 17.95,
+      "rowSum": 5169.6,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 16,
+      "goodsId": 309436,
+      "goodsName": "\"Фрекен БОК\" Целлюлоз.кух.универсальная губка - 2 шт",
+      "qty": 46,
+      "incomePrice": 60.22,
+      "expenditurePrice": 56.1,
+      "rowSum": 2580.6,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 17,
+      "goodsId": 309437,
+      "goodsName": "\"Фрекен БОК\" Целлюлозная кухонная губка \"Люкс\" 2 шт",
+      "qty": 50,
+      "incomePrice": 66.9,
+      "expenditurePrice": 62.33,
+      "rowSum": 3116.5,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 18,
+      "goodsId": 309371,
+      "goodsName": "\"Фрекен БОК\" Салфетка д/уборки хлопок \"Твист\" 1шт",
+      "qty": 36,
+      "incomePrice": 61.76,
+      "expenditurePrice": 57.53,
+      "rowSum": 2071.08,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 19,
+      "goodsId": 309372,
+      "goodsName": "\"Фрекен БОК\" Салфетка вискозная для уборки пола (40 шт/ящ)",
+      "qty": 120,
+      "incomePrice": 34.64,
+      "expenditurePrice": 32.27,
+      "rowSum": 3872.4,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 20,
+      "goodsId": 309377,
+      "goodsName": "\"Фрекен БОК\" Салфетка в рулоне для экспресс-уборки ",
+      "qty": 60,
+      "incomePrice": 117.76,
+      "expenditurePrice": 109.71,
+      "rowSum": 6582.6,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 21,
+      "goodsId": 309379,
+      "goodsName": "\"Фрекен БОК\" Салфетка для стекол и зеркал из микрофибры ",
+      "qty": 120,
+      "incomePrice": 72.5,
+      "expenditurePrice": 67.54,
+      "rowSum": 8104.8,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 22,
+      "goodsId": 309381,
+      "goodsName": "\"Фрекен БОК\" Салфетка из Микрофибры Мультифункциональная (горох) ",
+      "qty": 40,
+      "incomePrice": 33.36,
+      "expenditurePrice": 31.07,
+      "rowSum": 1242.8,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 23,
+      "goodsId": 321961,
+      "goodsName": "Фрекен БОК  - Салфетка для пола Универсальная XL из микрофибры 1шт.",
+      "qty": 80,
+      "incomePrice": 95.96,
+      "expenditurePrice": 89.39,
+      "rowSum": 7151.2,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 24,
+      "goodsId": 309383,
+      "goodsName": "Набор Экономная Хозяйка",
+      "qty": 120,
+      "incomePrice": 49,
+      "expenditurePrice": 45.64,
+      "rowSum": 5476.8,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 25,
+      "goodsId": 309384,
+      "goodsName": "\"Фрекен БОК\" Набор для кухни Оптима (28 шт/ящ)",
+      "qty": 140,
+      "incomePrice": 28.05,
+      "expenditurePrice": 26.13,
+      "rowSum": 3658.2,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 26,
+      "goodsId": 309386,
+      "goodsName": "\"Фрекен БОК\" Салфетка целлюлозная влаговпитывающая 2шт",
+      "qty": 270,
+      "incomePrice": 42.75,
+      "expenditurePrice": 39.83,
+      "rowSum": 10754.1,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 28,
+      "goodsId": 309388,
+      "goodsName": "\"Фрекен БОК\" Салфетка д/уборки целлюлозная Аккорд 3шт",
+      "qty": 225,
+      "incomePrice": 62.12,
+      "expenditurePrice": 57.88,
+      "rowSum": 13023,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 29,
+      "goodsId": 309402,
+      "goodsName": "\"Фрекен БОК\" Перчатки хозяйственные суперчувствительные M",
+      "qty": 288,
+      "incomePrice": 33.54,
+      "expenditurePrice": 31.25,
+      "rowSum": 9000,
+      "goodsGroup2": "Перчатки",
+      "vat": 20
+    }, {
+      "rowNum": 30,
+      "goodsId": 309403,
+      "goodsName": "\"Фрекен БОК\" Перчатки хозяйственные суперчувствительные L",
+      "qty": 288,
+      "incomePrice": 33.54,
+      "expenditurePrice": 31.25,
+      "rowSum": 9000,
+      "goodsGroup2": "Перчатки",
+      "vat": 20
+    }, {
+      "rowNum": 31,
+      "goodsId": 309413,
+      "goodsName": "\"Фрекен БОК\" Перчатки нитриловые в коробке S10шт/уп-5пар ",
+      "qty": 100,
+      "incomePrice": 81.92,
+      "expenditurePrice": 76.31,
+      "rowSum": 7631,
+      "goodsGroup2": "Перчатки",
+      "vat": 20
+    }, {
+      "rowNum": 32,
+      "goodsId": 309414,
+      "goodsName": "\"Фрекен БОК\" Перчатки нитриловые в коробке М 10шт/уп-5пар ",
+      "qty": 200,
+      "incomePrice": 81.92,
+      "expenditurePrice": 76.31,
+      "rowSum": 15262,
+      "goodsGroup2": "Перчатки",
+      "vat": 20
+    }, {
+      "rowNum": 33,
+      "goodsId": 309496,
+      "goodsName": "\"Фрекен БОК\" Пергамент широкий 5м бокс ",
+      "qty": 60,
+      "incomePrice": 52.64,
+      "expenditurePrice": 49.03,
+      "rowSum": 2941.8,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 34,
+      "goodsId": 309502,
+      "goodsName": "\"Фрекен БОК\" Рукав для запекания 3м+2м",
+      "qty": 96,
+      "incomePrice": 46.58,
+      "expenditurePrice": 43.39,
+      "rowSum": 4165.44,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 35,
+      "goodsId": 309503,
+      "goodsName": "\"Фрекен БОК\" Пакетики для запекания 4шт ",
+      "qty": 60,
+      "incomePrice": 25.89,
+      "expenditurePrice": 24.11,
+      "rowSum": 1446.6,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 36,
+      "goodsId": 309504,
+      "goodsName": "\"Фрекен БОК\" Фольга алюминиевая 10м",
+      "qty": 280,
+      "incomePrice": 53.51,
+      "expenditurePrice": 49.85,
+      "rowSum": 13958,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 37,
+      "goodsId": 309505,
+      "goodsName": "\"Фрекен БОК\" Фольга алюминиевая 20м",
+      "qty": 162,
+      "incomePrice": 93.59,
+      "expenditurePrice": 87.19,
+      "rowSum": 14124.78,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 38,
+      "goodsId": 309506,
+      "goodsName": "\"Фрекен БОК\" Фольга алюминиевая 10м Max (30 шт./ящ.)",
+      "qty": 30,
+      "incomePrice": 66.3,
+      "expenditurePrice": 61.77,
+      "rowSum": 1853.1,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 39,
+      "goodsId": 309507,
+      "goodsName": "\"Фрекен БОК\" Пакеты-слайдеры для хранения и замораживания М 10шт. ",
+      "qty": 240,
+      "incomePrice": 47.23,
+      "expenditurePrice": 44,
+      "rowSum": 10560,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 40,
+      "goodsId": 324862,
+      "goodsName": "Фрекен БОК зубочистки деревянные 150шт(240шт/ящ)",
+      "qty": 240,
+      "incomePrice": 18.76,
+      "expenditurePrice": 17.48,
+      "rowSum": 4195.2,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 41,
+      "goodsId": 309392,
+      "goodsName": "\"Фрекен БОК\" Запаска валика для чистки и уборки в домашнем хозяйстве 2х5м (24 шт/ящ)",
+      "qty": 48,
+      "incomePrice": 79.98,
+      "expenditurePrice": 74.51,
+      "rowSum": 3576.48,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 42,
+      "goodsId": 330503,
+      "goodsName": "ФБ Мини-валик для чистки и уборки в домашнем хозяйстве, 2,6м",
+      "qty": 240,
+      "incomePrice": 42.45,
+      "expenditurePrice": 39.54,
+      "rowSum": 9489.6,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 43,
+      "goodsId": 309394,
+      "goodsName": "\"Фрекен БОК\" Валик для чистки Эконом 20 л (24 шт/ящ)",
+      "qty": 120,
+      "incomePrice": 33.65,
+      "expenditurePrice": 31.35,
+      "rowSum": 3762,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 44,
+      "goodsId": 309366,
+      "goodsName": "БОНУС Пакет для мусора 45*55 30л/30шт синий (75шт/ящ)",
+      "qty": 150,
+      "incomePrice": 19.11,
+      "expenditurePrice": 17.79,
+      "rowSum": 2668.5,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 45,
+      "goodsId": 309438,
+      "goodsName": "БОНУС Губка кухонная 5шт.(40шт/ящ)",
+      "qty": 920,
+      "incomePrice": 12.64,
+      "expenditurePrice": 11.78,
+      "rowSum": 10837.6,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 46,
+      "goodsId": 309397,
+      "goodsName": "БОНУС Салфетка вискозная 3 шт. (65шт/ящ)",
+      "qty": 325,
+      "incomePrice": 14.86,
+      "expenditurePrice": 13.84,
+      "rowSum": 4498,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 47,
+      "goodsId": 309398,
+      "goodsName": "БОНУС Салфетка вискозная 5 шт. (40шт/ящ)",
+      "qty": 720,
+      "incomePrice": 23.42,
+      "expenditurePrice": 21.82,
+      "rowSum": 15710.4,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 48,
+      "goodsId": 324863,
+      "goodsName": "БОНУС Перчатки виниловые 10шт (72шт/ящ)",
+      "qty": 72,
+      "incomePrice": 29.96,
+      "expenditurePrice": 27.9,
+      "rowSum": 2008.8,
+      "goodsGroup2": "Перчатки",
+      "vat": 20
+    }, {
+      "rowNum": 49,
+      "goodsId": 309513,
+      "goodsName": "БОНУС Фольга алюм. 5м (50шт/ящ)",
+      "qty": 500,
+      "incomePrice": 26.41,
+      "expenditurePrice": 24.61,
+      "rowSum": 12305,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 50,
+      "goodsId": 309516,
+      "goodsName": "БОНУС Пленка пищевая п/е 20м. (45шт/ящ)",
+      "qty": 225,
+      "incomePrice": 25.29,
+      "expenditurePrice": 23.56,
+      "rowSum": 5301,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 51,
+      "goodsId": 309517,
+      "goodsName": "БОНУС Бумага для выпечки 5м",
+      "qty": 576,
+      "incomePrice": 15.19,
+      "expenditurePrice": 14.15,
+      "rowSum": 8150.4,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 52,
+      "goodsId": 309518,
+      "goodsName": "БОНУС Рукав для запекания 3м ",
+      "qty": 48,
+      "incomePrice": 21.92,
+      "expenditurePrice": 20.42,
+      "rowSum": 980.16,
+      "goodsGroup2": "Пленка, фольга, бумага",
+      "vat": 20
+    }, {
+      "rowNum": 53,
+      "goodsId": 319149,
+      "goodsName": "Бонус эконом Скребок 1 шт (150шт./ящ.) ",
+      "qty": 450,
+      "incomePrice": 8.09,
+      "expenditurePrice": 7.53,
+      "rowSum": 3388.5,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 54,
+      "goodsId": 309443,
+      "goodsName": "Фреш Бери! Влажные салфетки Лесная свежесть 15 шт.",
+      "qty": 160,
+      "incomePrice": 9.6,
+      "expenditurePrice": 8.94,
+      "rowSum": 1430.4,
+      "goodsGroup2": "Влажные салфетки",
+      "vat": 20
+    }, {
+      "rowNum": 55,
+      "goodsId": 309444,
+      "goodsName": "Фреш Бери! Влажные салфетки Экстра свежесть 15 шт.",
+      "qty": 80,
+      "incomePrice": 9.6,
+      "expenditurePrice": 8.94,
+      "rowSum": 715.2,
+      "goodsGroup2": "Влажные салфетки",
+      "vat": 20
+    }, {
+      "rowNum": 56,
+      "goodsId": 309446,
+      "goodsName": "Фреш Бери! Влажные салфетки Ультра свежесть 15 шт.",
+      "qty": 80,
+      "incomePrice": 9.6,
+      "expenditurePrice": 8.94,
+      "rowSum": 715.2,
+      "goodsGroup2": "Влажные салфетки",
+      "vat": 20
+    }, {
+      "rowNum": 57,
+      "goodsId": 309451,
+      "goodsName": "SMILE Minions влажные салфетки (3 дизайна) 15 шт (52шт/ящ)",
+      "qty": 416,
+      "incomePrice": 16.49,
+      "expenditurePrice": 15.35,
+      "rowSum": 6385.6,
+      "goodsGroup2": "Влажные салфетки",
+      "vat": 20
+    }, {
+      "rowNum": 58,
+      "goodsId": 309454,
+      "goodsName": "Влажная салфетка Smile Гранат&Белый чай   -15шт 40 шт/ящ",
+      "qty": 80,
+      "incomePrice": 15.02,
+      "expenditurePrice": 13.98,
+      "rowSum": 1118.4,
+      "goodsGroup2": "Влажные салфетки",
+      "vat": 20
+    }, {
+      "rowNum": 59,
+      "goodsId": 309455,
+      "goodsName": "Влажная салфетка Smile Бамбук&Эдельвейс-15шт 40 шт/ящ",
+      "qty": 80,
+      "incomePrice": 15.02,
+      "expenditurePrice": 13.98,
+      "rowSum": 1118.4,
+      "goodsGroup2": "Влажные салфетки",
+      "vat": 20
+    }, {
+      "rowNum": 60,
+      "goodsId": 309474,
+      "goodsName": "SMILE Салфетка влажная Hello Kitty mix 15шт (52шт/ящ) пр-во",
+      "qty": 260,
+      "incomePrice": 16.49,
+      "expenditurePrice": 15.35,
+      "rowSum": 3991,
+      "goodsGroup2": "Влажные салфетки",
+      "vat": 20
+    }, {
+      "rowNum": 61,
+      "goodsId": 315977,
+      "goodsName": "Lady Cotton Ватные диски 80 + 20 шт. (24шт\\ящ)",
+      "qty": 1800,
+      "incomePrice": 26.46,
+      "expenditurePrice": 24.65,
+      "rowSum": 44370,
+      "goodsGroup2": "Ватные диски",
+      "vat": 20
+    }, {
+      "rowNum": 62,
+      "goodsId": 309542,
+      "goodsName": "Lady Cotton Ватные палочки ПЭ 200 шт.",
+      "qty": 1000,
+      "incomePrice": 24.07,
+      "expenditurePrice": 22.42,
+      "rowSum": 22420,
+      "goodsGroup2": "Ватные диски",
+      "vat": 20
+    }, {
+      "rowNum": 63,
+      "goodsId": 309543,
+      "goodsName": "Lady Cotton Ватные палочки ПЭ 300 шт.",
+      "qty": 2500,
+      "incomePrice": 34.98,
+      "expenditurePrice": 32.58,
+      "rowSum": 81450,
+      "goodsGroup2": "Ватные диски",
+      "vat": 20
+    }, {
+      "rowNum": 64,
+      "goodsId": 309541,
+      "goodsName": "Lady Cotton Ватные палочки ПЭ 100 шт.",
+      "qty": 4200,
+      "incomePrice": 13.29,
+      "expenditurePrice": 12.38,
+      "rowSum": 51996,
+      "goodsGroup2": "Ватные диски",
+      "vat": 20
+    }, {
+      "rowNum": 65,
+      "goodsId": 309356,
+      "goodsName": "\"Фрекен БОК\" Пакет для мусора с затяжкой Стандарт фиолетовый 35л 30 шт, (15 шт/ящ)",
+      "qty": 195,
+      "incomePrice": 63.58,
+      "expenditurePrice": 59.24,
+      "rowSum": 11551.8,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 67,
+      "goodsId": 309344,
+      "goodsName": "\"Фрекен БОК\" Пакет д/мусора 50*60/30шт/35л синий",
+      "qty": 280,
+      "incomePrice": 19.77,
+      "expenditurePrice": 18.41,
+      "rowSum": 5154.8,
+      "goodsGroup2": "Пакеты для мусора",
+      "vat": 20
+    }, {
+      "rowNum": 68,
+      "goodsId": 309427,
+      "goodsName": "\"Фрекен БОК\"  Губка кухонная Максима с волнистой поверхностью 5+1 шт.",
+      "qty": 1242,
+      "incomePrice": 18.47,
+      "expenditurePrice": 17.21,
+      "rowSum": 21374.82,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 69,
+      "goodsId": 268399,
+      "goodsName": "\"Фрекен БОК\" Губка кухонная MAX 5 шт",
+      "qty": 510,
+      "incomePrice": 29.13,
+      "expenditurePrice": 27.13,
+      "rowSum": 13836.3,
+      "goodsGroup2": "Губки",
+      "vat": 20
+    }, {
+      "rowNum": 70,
+      "goodsId": 309376,
+      "goodsName": "\"Фрекен БОК\" Салфетка д/уборки вискоз. Фламенко 5шт",
+      "qty": 1140,
+      "incomePrice": 32.37,
+      "expenditurePrice": 30.15,
+      "rowSum": 34371,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 71,
+      "goodsId": 309387,
+      "goodsName": "\"Фрекен БОК\" Салфетка д/уборки целлюлозная Болеро 2шт",
+      "qty": 162,
+      "incomePrice": 45.33,
+      "expenditurePrice": 42.22,
+      "rowSum": 6839.64,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 72,
+      "goodsId": 316590,
+      "goodsName": "ФБ Салфетка для уборки целюлоза Аккорд 4+1шт (35шт/ящ)",
+      "qty": 5250,
+      "incomePrice": 68.22,
+      "expenditurePrice": 63.56,
+      "rowSum": 333690,
+      "goodsGroup2": "Салфетки, вылики, щетки  для уборки",
+      "vat": 20
+    }, {
+      "rowNum": 73,
+      "goodsId": 316447,
+      "goodsName": "Lady Cotton Ватные диски 120 + 20 шт.(24шт\\ящ)",
+      "qty": 960,
+      "incomePrice": 31.52,
+      "expenditurePrice": 29.36,
+      "rowSum": 28185.6,
+      "goodsGroup2": "Ватные диски",
+      "vat": 20
+    }, {
+      "rowNum": 74,
+      "goodsId": 314143,
+      "goodsName": "Lady Cotton Ватные диски 150 + 25 шт.(24шт\\ящ)",
+      "qty": 3600,
+      "incomePrice": 36.28,
+      "expenditurePrice": 33.8,
+      "rowSum": 121680,
+      "goodsGroup2": "Ватные диски",
+      "vat": 20
+    }]
+  }]
+}

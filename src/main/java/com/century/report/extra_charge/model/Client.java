@@ -1,4 +1,4 @@
-package com.century.report.extra_charge.refs;
+package com.century.report.extra_charge.model;
 
 import lombok.Data;
 

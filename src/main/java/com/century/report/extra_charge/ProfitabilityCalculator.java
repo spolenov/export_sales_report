@@ -2,6 +2,7 @@ package com.century.report.extra_charge;
 
 import com.century.exception.ExportSalesReportException;
 import com.century.report.ReportSettings;
+import com.century.report.extra_charge.model.ReportRow;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -10,14 +11,14 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.century.report.extra_charge.Grouping.*;
+import static com.century.report.extra_charge.model.Grouping.*;
 import static java.math.BigDecimal.ZERO;
 import static java.math.RoundingMode.HALF_UP;
 
-class ProfitabilityCalculator {
+public class ProfitabilityCalculator {
     private ReportSettings settings;
 
-    ProfitabilityCalculator(ReportSettings settings){
+    public ProfitabilityCalculator(ReportSettings settings){
         this.settings = settings;
     }
     
@@ -252,7 +253,7 @@ class ProfitabilityCalculator {
         }
     }
 
-    void setProfitabilityByGroups(List<ReportRow> rows){
+    public void setProfitabilityByGroups(List<ReportRow> rows){
         int groupingOrder = 0;
 
         for(String groupName: settings.getGroupings()){

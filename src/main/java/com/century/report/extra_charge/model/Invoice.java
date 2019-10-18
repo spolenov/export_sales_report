@@ -1,6 +1,5 @@
-package com.century.report.extra_charge;
+package com.century.report.extra_charge.model;
 
-import com.century.report.extra_charge.refs.Client;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -24,7 +23,7 @@ public class Invoice {
                 .orElse(null);
     }
 
-    List<ReportRow> getReportRows(){
+    public List<ReportRow> getReportRows(){
         return this.rows.stream()
                 .map(r -> new ReportRow(this, r))
                 .collect(Collectors.toList());

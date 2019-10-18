@@ -1,4 +1,4 @@
-package com.century.report.extra_charge;
+package com.century.report.extra_charge.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

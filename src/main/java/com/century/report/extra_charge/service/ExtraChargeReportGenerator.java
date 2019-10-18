@@ -1,10 +1,15 @@
-package com.century.report.extra_charge;
+package com.century.report.extra_charge.service;
 
 import com.century.exception.ExportSalesReportException;
 import com.century.report.ReportSettings;
 import com.century.report.ReportType;
+import com.century.report.TxtLogger;
+import com.century.report.extra_charge.ProfitabilityCalculator;
+import com.century.report.extra_charge.model.Invoice;
+import com.century.report.extra_charge.model.ReportRow;
 import com.century.report.generator.ExportSalesReportGenerator;
 import com.century.report.generator.JasperEntity;
+import com.century.report.service.util.BeanUtil;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -22,8 +27,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static com.century.report.Util.*;
-import static com.century.report.extra_charge.Grouping.*;
+import static com.century.report.extra_charge.model.Grouping.*;
 import static java.math.BigDecimal.ZERO;
 import static java.math.RoundingMode.HALF_UP;
 import static net.sf.jasperreports.engine.JasperFillManager.fillReport;
@@ -31,9 +35,28 @@ import static net.sf.jasperreports.engine.util.JRLoader.loadObject;
 
 @Slf4j
 public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoice> {
+
     public ExtraChargeReportGenerator(ReportType reportType, ReportSettings settings, List<Invoice> data) {
         super(reportType, settings, data);
         prepareGroupings();
+    }
+
+    private TxtLogger getLogger(){
+        return BeanUtil.getBean(TxtLogger.class);
+    }
+
+    private ExtraChargeUtilService getUtilService(){
+        return BeanUtil.getBean(ExtraChargeUtilService.class);
+    }
+
+    @Override
+    protected void logToFile(String username, String msg) {
+        BeanUtil.getBean(TxtLogger.class).logToFile(username, msg);
+    }
+
+    @Override
+    protected String getExcelFileFullPath(String filename) {
+        return getUtilService().getExcelFileFullPath(filename);
     }
 
     @Override
@@ -59,8 +82,10 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
         } catch (Exception e) {
             String msg = String.format("Failed to generate %s report file (%s) by parameters: %s",
                     reportType, ret == null? "null": ret.getAbsolutePath(), settings);
-            logToFile(settings.getUsername(), msg, e);
-            throw new ExportSalesReportException(msg, e);
+            getLogger().logToFile(settings.getUsername(), msg, e);
+
+            throw new ExportSalesReportException(
+                    String.format("Ошибка формирования отчёта %s", reportType), e);
         }
     }
 
@@ -75,7 +100,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
                 .getResourceAsStream(templateFileName)) {
 
             if(input == null){
-                logToFile(settings.getUsername(), String.format("No such file: %s", templateFileName));
+                getLogger().logToFile(settings.getUsername(), String.format("No such file: %s", templateFileName));
                 throw new ExportSalesReportException(String.format("Не существует файл: %s", templateFileName));
             }
 
@@ -83,7 +108,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
             result = fillReport(report, params, dataSource);
         } catch (Exception ex) {
             String msg = "Не удалось заполнить данные для отчёта";
-            logToFile(settings.getUsername(), msg, ex);
+            getLogger().logToFile(settings.getUsername(), msg, ex);
             throw new ExportSalesReportException(msg, ex);
         }
         return result;
@@ -104,7 +129,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
 
         Iterator<String> groupIterator = settings.getGroupings().iterator();
 
-        for(int i = 1; i<= getMaxGroupingCount(); i++){
+        for(int i = 1; i<= getUtilService().getMaxGroupingCount(); i++){
             if(groupIterator.hasNext()){
                 params.put("grouping" + i, groupIterator.next());
             } else{
@@ -144,7 +169,7 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
 
         List groupings = settings.getGroupings();
 
-        if(groupings.size() > getMaxGroupingCount()){
+        if(groupings.size() > getUtilService().getMaxGroupingCount()){
             throw new ExportSalesReportException(
                     String.format("Неверное количество группировок: %d", groupings.size()));
         }
@@ -239,12 +264,12 @@ public class ExtraChargeReportGenerator extends ExportSalesReportGenerator<Invoi
         row.setExtraChargeExport(
                 row.getIncomePrice().compareTo(ZERO) <= 0?
                 ZERO: row.getExpenditurePrice().subtract(row.getIncomePrice())
-                .divide(row.getIncomePrice(), getScale(), HALF_UP));
+                .divide(row.getIncomePrice(), getUtilService().getScale(), HALF_UP));
 
         row.setIncomePriceWithoutVAT (
                 row.getIncomePrice().divide(
                     new BigDecimal(row.getVat())
-                            .divide(new BigDecimal(100), getScale(), HALF_UP)
+                            .divide(new BigDecimal(100), getUtilService().getScale(), HALF_UP)
                             .add(BigDecimal.ONE), 15, HALF_UP));
 
         row.setExtraCharge1C(row.getIncomePriceWithoutVAT().compareTo(ZERO) <=0 ? ZERO:
